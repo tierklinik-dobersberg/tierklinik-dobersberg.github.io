@@ -1,0 +1,63 @@
+<div 
+    class="m-auto max-w-screen-xl p-10 flex flex-col items-starts sm:flex-row justify-around sm:justify-between text-white w-full text-xs gap-4">
+
+    {{- with index .Site.Menus "main"}}
+    {{- range . }}
+    {{ if ne .Name "Kontakt" }}
+    <ul class="space-y-2">
+        <li class="text-base underline">
+            <a class="no-underline" href="{{ .URL }}">
+                {{ .Name }}
+            </a>
+        </li>
+
+        {{- with .Children }}
+            {{- range . }}
+        <li>
+            <a href="{{ .URL }}">{{ .Name }}</a>
+        </li>
+            {{- end}}
+        {{- end }}
+
+    </ul>
+    {{- end }}
+    {{- end }}
+    {{- end }}
+
+    {{- with index .Site.Menus "footer"}}
+    <ul class="space-y-2">
+        {{- range . }}
+        <li>
+            <a href="{{ .URL }}">
+                {{ .Name }}
+            </a>
+        </li>
+        {{- end }}
+    </ul>
+    {{- end }}
+
+    <ul class="space-y-2">
+        <li class="text-base underline">Tierklinik Dobersberg</li>
+        <li>Am Szaparypark 1a,</li>
+        <li>3843 Dobersberg</li>
+        <li class="my-3"></li>
+        <li><a class="underline" href="tel:+4328432800">Tel: +43-(0) 2843 2800</a></li>
+        <li><a href="mailto:ordiation@tierklinikdobersberg.at" class="underline">E-Mail</a></li>
+        <li class="my-3"></li>
+        <li>
+            <a href="https://www.facebook.com/tierarztpraxisdobersberg/">
+                <img src="/facebook.jpg" class="w-32">
+            </a>
+        </li>
+    </ul>
+</div>
+<div class="text-xs m-auto max-w-screen-md text-white p-1 flex flex-col items-center justify-center text-opacity-70">
+    <span>
+        Website Design
+        &copy; {{ time.Now | time.Format "2006" }} <a href="https://www.github.com/ppacher">Patrick
+            Pacher</a>.
+    </span>
+    <span>
+        Letzte Änderung {{ time.Now | time.Format "2006-01-02 15:04" }}
+    </span>
+</div>

@@ -1,0 +1,54 @@
+baseURL: 'https://tierklinikdobersberg.at/'
+languageCode: 'de-at'
+title: 'Tierklinik Dobersberg'
+logoUrl: "imgs/logo.webp"
+
+menus:
+    main:
+    - name: Tierklinik
+      weight: 10
+
+    - name: Leistungen
+      url: /#unsere-leistungen
+      parent: Tierklinik
+    - name: News & Aktuelles
+      url: /news/
+      parent: Tierklinik
+    - name: Unser Team
+      url: /#unser-team
+      parent: Tierklinik
+    - name: Jobs & Praktikum
+      url: /jobs/
+      parent: Tierklinik
+  
+
+    - name: Für Tierbesitzer
+      weight: 20
+
+    - name: Leistungen
+      url: /#unsere-leistungen
+      parent: Für Tierbesitzer
+    - name: Vor- & Nachsorge
+      url: /faq/
+      parent: Für Tierbesitzer
+  
+    - name: Kontakt
+      url: /contact/ 
+      weight: 30
+
+    footer:
+    - url: /contact/#map
+      name: Anfahrt
+    - url: /datenschutz/
+      name: Datenschutz
+    - url: /impressum/
+      name: Impressum
+    - url: /agb/
+      name: AGB
+    - url: /faq/
+      name: FAQ
+
+markup:
+    goldmark:
+        renderer:
+            hardWraps: true

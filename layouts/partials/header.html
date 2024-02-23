@@ -1,0 +1,21 @@
+<div id="header-wrapper" class="mx-2 max-w-screen-xl flex flex-wrap items-center z-50 w-full">
+    {{ $image := resources.Get "imgs/logo.webp" }}
+    <div class="flex-initial">
+        <a href="https://tierklinikdobersberg.at" class="logo text-2xl flex items-center">
+            <img class="hidden sm:inline h-10 mx-2" src="{{ $image.RelPermalink }}" />
+            <span class="mr-2" style="color: #1080cf">Tierklinik</span>
+            <span style="color: #15377e">Dobersberg</span>
+        </a>
+    </div>
+
+    <div class="justify-end flex-grow flex flex-row flex-wrap items-center gap-2">
+        {{ partial "menu.html" (dict "menuID" "main" "page" .) }}
+
+        <a href="tel:+4328432800"
+            class="hover:text-white transition duration-200 scale-90 transform ease-in-out hover:shadow-md bg-red-400 hover:bg-red-600 text-white px-3 py-1 shadow rounded-lg font-normal ml-4 flex flex-row items-center gap-2">
+            <i class="text-white fa fas fa-phone-alt"></i>
+            <span class="hidden font-normal lg:inline-block whitespace-nowrap">02843 / 2800</span>
+        </a>
+    </div>
+
+</div>

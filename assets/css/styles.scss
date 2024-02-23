@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@tailwind variants;
+
+$fa-font-path: "./webfonts";
+
+@import "./fontawesome/fontawesome.scss";
+@import "./fontawesome/solid.scss";
+@import "./fontawesome/regular.scss";
+
+#menu {
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+
+  .dropdown-content {
+    @apply mt-[1px] left-[1px] min-w-[160px] overflow-auto z-10 flex-col items-stretch justify-start;
+  }
+
+  .dropdown-content a {
+    @apply block text-left cursor-pointer py-3 px-4 text-sm;
+  }
+
+  .dropdown-content a:hover {
+    color: #1080cf;
+  }
+
+  .nav-li .dropdown-content {
+    @apply transition ease-in-out duration-150 flex invisible opacity-0 transform scale-y-0 origin-top h-0;
+  }
+
+  .nav-li.show .dropdown-content {
+    @apply visible transition-all ease-in-out duration-200 opacity-100 h-fit transform scale-y-100 origin-top;
+  }
+
+  .nav-li {
+    @apply border-b border-transparent
+  }
+
+  .nav-li.show {
+    @apply border-blue-400 z-50
+  }
+
+}
+
+@media (max-width: 768px) {
+  #menu {
+    border-top: 1px solid #1080cf;
+    min-width: 200px;
+
+    nav {
+      @apply w-full;
+    }
+
+    &.active {
+      top: 2.5rem;
+      display: flex;
+    }
+  }
+}
+

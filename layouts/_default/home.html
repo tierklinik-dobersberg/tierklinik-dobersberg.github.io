@@ -1,0 +1,10 @@
+{{ define "main" }}
+  {{ .Content }}
+  {{- range site.RegularPages }}
+
+    {{- if eq .Type "section" }}
+      {{ partial "section.html" . }}
+    {{- end }}
+
+  {{- end }}
+{{ end }}
