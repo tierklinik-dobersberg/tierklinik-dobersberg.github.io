@@ -16,15 +16,16 @@ $fa-font-path: "./webfonts";
   }
 
   .dropdown-content {
-    @apply mt-[1px] left-[1px] min-w-[160px] overflow-auto z-10 flex-col items-stretch justify-start;
+    @apply mt-[5px] left-[1px] min-w-[160px] overflow-auto flex-col items-stretch justify-start;
   }
 
   .dropdown-content a {
     @apply block text-left cursor-pointer py-3 px-4 text-sm;
   }
 
-  .dropdown-content a:hover {
+  .dropdown-content li:hover {
     color: #1080cf;
+    @apply bg-gray-100;
   }
 
   .nav-li .dropdown-content {
@@ -36,13 +37,12 @@ $fa-font-path: "./webfonts";
   }
 
   .nav-li {
-    @apply border-b border-transparent
+    @apply border-b border-transparent;
   }
 
   .nav-li.show {
-    @apply border-blue-400 z-50
+    @apply border-blue-400;
   }
-
 }
 
 @media (max-width: 768px) {
@@ -60,4 +60,3 @@ $fa-font-path: "./webfonts";
     }
   }
 }
-

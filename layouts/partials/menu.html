@@ -39,7 +39,8 @@
 {{- $name = . }}
 {{- end }}
 {{- end }}
-<li class="relative w-full whitespace-nowrap rounded-t nav-li hover:bg-gray-50 group">
+<li
+  class="relative py-1 w-full whitespace-nowrap {{ if .Children }} rounded-t {{else}} rounded {{end}} nav-li hover:bg-gray-50 group">
   <a {{- range $k, $v :=$attrs }} {{- with $v }} {{- printf " %s=%q" $k $v | safeHTMLAttr }} {{- end }} {{- end -}}>
     {{- if .Children }}
     <i

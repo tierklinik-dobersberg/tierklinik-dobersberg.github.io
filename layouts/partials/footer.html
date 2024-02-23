@@ -1,5 +1,5 @@
-<div 
-    class="m-auto max-w-screen-xl p-10 flex flex-col items-starts sm:flex-row justify-around sm:justify-between text-white w-full text-xs gap-4">
+<div
+    class="flex flex-col gap-4 justify-around p-10 m-auto w-full max-w-screen-xl text-sm text-white items-starts sm:flex-row sm:justify-between">
 
     {{- with index .Site.Menus "main"}}
     {{- range . }}
@@ -12,11 +12,11 @@
         </li>
 
         {{- with .Children }}
-            {{- range . }}
+        {{- range . }}
         <li>
             <a href="{{ .URL }}">{{ .Name }}</a>
         </li>
-            {{- end}}
+        {{- end}}
         {{- end }}
 
     </ul>
@@ -51,10 +51,10 @@
         </li>
     </ul>
 </div>
-<div class="text-xs m-auto max-w-screen-md text-white p-1 flex flex-col items-center justify-center text-opacity-70">
+<div class="flex flex-col justify-center items-center p-1 m-auto max-w-screen-md text-xs text-white text-opacity-70">
     <span>
         Website Design
-        &copy; {{ time.Now | time.Format "2006" }} <a href="https://www.github.com/ppacher">Patrick
+        &copy; {{ time.Now | time.Format "2006" }} <a href="https://www.github.com/ppacher" class="underline">Patrick
             Pacher</a>.
     </span>
     <span>
