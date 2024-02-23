@@ -1,42 +1,50 @@
-{{ $align := .Param "align" | default "left"}}
-{{ $left := eq $align "left" }}
-{{ $containerClass := .Param "class" | default "" }}
+{{- $align := .Param "align" | default "left"}}
+{{- $left := eq $align "left" }}
+{{- $containerClass := .Param "class" | default "" }}
+{{- $subtitle := .Param "subtitle" | default "" }}
+{{- $image := .Param "image" | default "" }}
+{{- $icon := .Param "icon" | default "" }}
 
 <div class="relative w-full {{ $containerClass }}">
     {{- $bgImg := .Param "background" | default "" }}
     {{- $bgImgClass := .Param "background-class" | default "" }}
     {{- if ne $bgImg "" }}
-        <div class="absolute top-0 left-0 bottom-0 right-0 z-0 opacity-10 overflow-hidden flex flex-row {{ if not $left }}justify-end{{ end }}">
-            {{ partial "imgh.html" (dict "src" $bgImg "imgClass" $bgImgClass "withDiv" false) }}
-        </div>
+    <div
+        class="absolute top-0 left-0 bottom-0 right-0 z-0 opacity-10 overflow-hidden flex flex-row {{ if not $left }}justify-end{{ end }}">
+        {{ partial "imgh.html" (dict "src" $bgImg "imgClass" $bgImgClass "withDiv" false) }}
+    </div>
     {{- end }}
 
-    <div class="max-w-screen-xl p-8 m-auto">
+    <div class="p-8 m-auto max-w-screen-xl">
         <h1 class="font-extralight text-2xl {{if not $left }} text-end {{ end }}">
             {{ .Title }}
         </h1>
 
-        <div class="w-full flex-row mb-8 flex-nowrap flex justify-between items-center gap-4 {{if $left }} flex-row-reverse {{ end }}">
-            {{ $image := .Param "icon" }}
-            {{ if ne $image "" }}
-                <span class="text-blue-500 text-2xl">
-                    <i class="fa {{ $image }}"></i>
-                </span>
+        <div
+            class="w-full flex-row mb-8 flex-nowrap flex justify-between items-center gap-4 {{if $left }} flex-row-reverse {{ end }}">
+            {{ if ne $icon "" }}
+            <span class="text-2xl text-blue-500">
+                <i class="fa {{ $icon }}"></i>
+            </span>
             {{- end }}
 
-            <div class="border-b-2 border-dashed border-blue-500 flex-grow"></div>
+            <div class="flex-grow border-b-2 border-blue-500 border-dashed"></div>
         </div>
 
         <div class="flex flex-row gap-8 {{ if not $left }} flex-row-reverse {{ end }}">
+
             <content class="flex-grow text-base font-light font-inter prose">
+                {{- if ne $subtitle "" }}
+                <h2>{{ $subtitle }}</h2>
+                {{- end }}
+
                 {{ .Content }}
             </content>
-            {{ $image := .Param "image" }}
-            {{ if ne $image ""}}
-                <figure class="w-1/2 h-fit shadow-2xl flex-shrink-0 overflow-hidden rounded">
-                    {{ partial "imgh.html" (dict "src" $image) }}
-                </figure>
 
+            {{ if ne $image ""}}
+            <figure class="overflow-hidden flex-shrink-0 w-1/2 rounded shadow-lg h-fit">
+                {{ partial "imgh.html" (dict "src" $image) }}
+            </figure>
             {{- end }}
         </div>
     </div>
