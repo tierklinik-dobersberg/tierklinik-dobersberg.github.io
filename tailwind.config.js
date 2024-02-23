@@ -1,7 +1,5 @@
-const themeDir = __dirname;
-
 module.exports = {
-  content: [`${themeDir}/layouts/**/*.html`, `${themeDir}/content/**/*.md`],
+  content: [`./layouts/**/*.html`, `./content/**/*.{md,html}`],
   theme: {
     extend: {
       // that is animation class

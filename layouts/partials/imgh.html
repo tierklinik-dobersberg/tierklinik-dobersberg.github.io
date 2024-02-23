@@ -39,11 +39,11 @@
 */}}
 {{- $CFPstyle := printf "%s%s%s" "background: url(data:image/jpeg;base64," $LQIP_b64 "); background-size: cover; background-repeat: no-repeat;" -}}
 {{/*
-	Then, we create a 640-pixel-wide JPG of the image.
+	Then, we create a 1280-pixel-wide JPG of the image.
 	This will serve as the "fallback" image for that tiny percentage
 	of browsers that don't understand the HTML `picture` tag.
 */}}
-{{- $actualImg := $src.Resize "640x jpg" -}}
+{{- $actualImg := $src.Resize "1280x jpg" -}}
 {{/*
 	Now we'll handle the LQIP background for the div that will contain
 	the image content; the conditional at the top controls whether we're

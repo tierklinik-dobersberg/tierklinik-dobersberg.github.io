@@ -47,8 +47,3 @@ menus:
       name: AGB
     - url: /faq/
       name: FAQ
-
-markup:
-    goldmark:
-        renderer:
-            hardWraps: true

@@ -1,9 +1,18 @@
 {{ define "main" }}
   {{ .Content }}
-  {{- range site.RegularPages }}
 
-    {{- if eq .Type "section" }}
-      {{ partial "section.html" . }}
+  {{- range $idx, $p := (sort site.RegularPages "File.BaseFileName" "asc") }}
+    {{- $remainer := mod $idx 2}}
+    {{- $align := "left"}} 
+    {{- $background := $p.Param "class" | default "bg-blue-100 bg-opacity-50"}} 
+
+    {{ if eq $remainer 0 }}
+      {{ $align = "right"}}
+      {{ $background = $p.Param "class" | default "bg-white"}}
+    {{ end  }}
+
+    {{- if eq $p.Type "section" }}
+      {{ partial "section.html" (dict "context" . "align" $align "class" $background) }}
     {{- end }}
 
   {{- end }}
