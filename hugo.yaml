@@ -1,10 +1,14 @@
-baseURL: 'https://tierklinikdobersberg.at/'
-languageCode: 'de-at'
-title: 'Tierklinik Dobersberg'
+baseURL: "https://tierklinikdobersberg.at/"
+languageCode: "de-at"
+title: "Tierklinik Dobersberg"
 logoUrl: "imgs/logo.webp"
 
+imaging:
+  resampleFilter: Lanczos
+  hint: photo
+
 menus:
-    main:
+  main:
     - name: Tierklinik
       weight: 10
 
@@ -20,7 +24,6 @@ menus:
     - name: Jobs & Praktikum
       url: /jobs/
       parent: Tierklinik
-  
 
     - name: Für Tierbesitzer
       weight: 20
@@ -31,12 +34,12 @@ menus:
     - name: Vor- & Nachsorge
       url: /faq/
       parent: Für Tierbesitzer
-  
+
     - name: Kontakt
-      url: /contact/ 
+      url: /contact/
       weight: 30
 
-    footer:
+  footer:
     - url: /contact/#map
       name: Anfahrt
     - url: /datenschutz/

@@ -16,4 +16,101 @@
     {{- end }}
 
   {{- end }}
+
+  <section class="flex items-center justify-start w-full shadow-inner group py-4 md:py-8 lg:py-12 xl:py-16 ">
+    <div class="max-w-screen-xl m-auto">
+
+      <h1 class="py-4 text-3xl font-extralight text-center md:text-left md:ml-12" id="unser-team">
+        Unser Team
+      </h1>
+
+      <div
+          class="w-full flex-row flex-nowrap flex justify-between items-center">
+          <div class="block flex-grow border-b-2 border-blue-400 border-dashed"></div>
+
+          <div
+              class="flex justify-center items-center w-12 h-12 text-2xl text-blue-500 bg-white bg-opacity-75 rounded-full border-2 border-blue-400 border-dashed">
+              <i class="fa fa-hospital-user"></i>
+          </div>
+
+          <div class="flex-grow border-b-2 border-blue-400 border-dashed"></div>
+      </div>
+
+      {{ with index site.Data "team" }}
+
+      <h2 class="py-4 text-2xl font-medium text-center md:text-left md:ml-12">
+        Tierärzte
+      </h2>
+
+      <div class="flex flex-row flex-wrap gap-4 md:gap-8 lg:gap-12 justify-center items-start py-8">
+        {{ range (index . "management")}}
+
+        <div class="flex flex-col flex-nowrap gap-2 items-center justify-center flex-initial flex-shrink-0 flex-grow-0 w-48">
+          <figure
+              class="overflow-hidden flex-shrink-0 rounded-full shadow w-32 h-32 bg-blue-50  transform transition duration-300 ease-in-out hover:scale-110">
+              {{ $img := resources.Get (printf "imgs/team/%s" .img_transparent)}}
+              <img src="{{ $img.RelPermalink }}">
+          </figure>
+          <label class="text-center">{{ .name }}</label>
+        </div>
+
+        {{ end }}
+
+        {{ range (index . "doctors")}}
+
+        <div class="flex flex-col flex-nowrap gap-2 items-center justify-center flex-initial flex-shrink-0 flex-grow-0 w-48">
+          <figure
+              class="overflow-hidden flex-shrink-0 rounded-full shadow w-32 h-32 bg-blue-50  transform transition duration-300 ease-in-out hover:scale-110">
+              {{ $img := resources.Get (printf "imgs/team/%s" .img_transparent)}}
+              <img src="{{ $img.RelPermalink }}">
+          </figure>
+          <label class="text-center">{{ .name }}</label>
+        </div>
+
+        {{ end }}
+      </div>
+
+
+      <h2 class="py-4 text-2xl font-medium text-center md:text-left md:ml-12 mt-16">
+        Ordinationsassitenz
+      </h2>
+
+      <div class="flex flex-row flex-wrap gap-4 md:gap-8 lg:gap-12 justify-center items-start py-8">
+        {{ range (index . "assistant")}}
+
+        <div class="flex flex-col flex-nowrap gap-2 items-center justify-center flex-initial flex-shrink-0 flex-grow-0 w-48">
+          <figure
+              class="overflow-hidden flex-shrink-0 rounded-full shadow w-32 h-32 bg-blue-50  transform transition duration-300 ease-in-out hover:scale-110">
+              {{ $img := resources.Get (printf "imgs/team/%s" .img_transparent)}}
+              <img src="{{ $img.RelPermalink }}">
+          </figure>
+          <label class="text-center">{{ .name }}</label>
+        </div>
+
+        {{ end }}
+      </div>
+
+
+      <h2 class="py-4 text-2xl font-medium text-center md:text-left md:ml-12 mt-16">
+        IT Administration
+      </h2>
+
+      <div class="flex flex-row flex-wrap gap-12 justify-center items-start py-8">
+        {{ range (index . "team_it")}}
+
+        <div class="flex flex-col flex-nowrap gap-2 items-center justify-center flex-initial flex-shrink-0 flex-grow-0 w-48">
+          <figure
+              class="overflow-hidden flex-shrink-0 rounded-full shadow w-32 h-32 bg-blue-50  transform transition duration-300 ease-in-out hover:scale-110">
+              {{ $img := resources.Get (printf "imgs/team/%s" .img_transparent)}}
+              <img src="{{ $img.RelPermalink }}">
+          </figure>
+          <label class="text-center">{{ .name }}</label>
+        </div>
+
+        {{ end }}
+      </div>
+      {{ end }}
+
+    </div>
+  </section>
 {{ end }}

@@ -6,17 +6,9 @@
 {{- $icon := .context.Param "icon" | default "" }}
 {{- $withLine := .context.Param "with-line" | default true }}
 
-<div class="relative w-full {{ $containerClass }} shadow-inner group py-4 md:py-8 lg:py-12 xl:py-16">
-    {{- $bgImg := .context.Param "background" | default "" }}
-    {{- $bgImgClass := .context.Param "background-class" | default "" }}
-    {{- if ne $bgImg "" }}
-    <div
-        class="absolute top-0 left-0 bottom-0 right-0 z-[-1] opacity-10 overflow-hidden flex flex-row {{ if not $left }}justify-end{{ end }}">
-        {{ partial "imgh.html" (dict "src" $bgImg "imgClass" $bgImgClass "withDiv" false) }}
-    </div>
-    {{- end }}
+<section class="relative w-full {{ $containerClass }} shadow-inner group py-4 md:py-8 lg:py-12 xl:py-16">
 
-    <div class="p-8 m-auto max-w-screen-xl">
+    <div class="relative z-10 p-4 m-auto max-w-screen-xl md:p-8">
         {{ if .context.Title }}
         <h1 class="py-4 text-3xl font-extralight text-center md:text-left md:ml-12">
             {{ .context.Title }}
@@ -40,7 +32,7 @@
         {{- end }}
 
         <div
-            class="flex flex-row flex-wrap md:flex-nowrap gap-12 md:gap-14 lg:gap-16 xl:gap-20 {{ if $image }}{{ if not $left }} flex-row-reverse {{ end }} justify-between {{ else }} justify-center {{ end }} px-12 py-4 lg:py-8 xl:py-12">
+            class="flex flex-row flex-wrap md:flex-nowrap gap-12 md:gap-14 lg:gap-16 xl:gap-20 {{ if $image }}{{ if not $left }} flex-row-reverse {{ end }} justify-between {{ else }} justify-center {{ end }} px-4 md:px-8 lg:px-12 py-4 lg:py-8 xl:py-12">
 
             <content class="flex-grow text-base font-light font-inter prose">
                 {{- if ne $subtitle "" }}
@@ -58,4 +50,13 @@
             {{- end }}
         </div>
     </div>
-</div>
+
+    {{- $bgImg := .context.Param "background" | default "" }}
+    {{- $bgImgClass := .context.Param "background-class" | default "" }}
+    {{- if ne $bgImg "" }}
+    <div
+        class="absolute top-0 left-0 bottom-0 right-0 opacity-10 overflow-hidden flex flex-row {{ if not $left }}justify-end{{ end }}">
+        {{ partial "imgh.html" (dict "src" $bgImg "imgClass" $bgImgClass "withDiv" false) }}
+    </div>
+    {{- end }}
+</section>

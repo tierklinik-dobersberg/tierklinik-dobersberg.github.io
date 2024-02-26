@@ -1,0 +1,137 @@
+management:
+  - name: Mag. Carmen Pacher
+    img: carmen.png
+    img_transparent: carmen-bg-transparent.png
+    job: Tierärtzin / Chiropraktikering
+    desc: >
+      Diplomstudium an der Veterinärmedizinischen Universität Wien.
+      Veterinär-Chiropraktik-Ausbildung an der BackBone-Academy abgeschlossen.
+
+  - name: Dr. Siegfried Fürst
+    img: siegfried.png
+    img_transparent: siegfried-bg-transparent.png
+    job: Tierarzt
+    desc: >
+      Diplom – u. Doktoratsstudium an der Veterinärmedizin. Universität Wien.
+      Tierarzt für Allgemeinmedizin bei allen Haustieren.
+      Spezialisierung auf Nutztiere, Pferde und Kleintierchirurgie.
+      Regelmäßige Teilnahme an Fortbildungsveranstaltungen im In – u. Ausland.
+
+  - name: Dr. Claudia Fürst
+    img: claudia.png
+    img_transparent: claudia-bg-transparent.png
+    job: Tierärztin
+    desc: >
+      Diplom – und Doktoratsstudium an der Veterinärmedizin. Universität Wien.
+      Tierarzt für Allgemeinmedizin bei allen Haustieren.
+      Spezialisierung auf Kleintiermedizin.
+      Regelmäßige Teilnahme an Fortbildungsveranstaltungen im In – u. Ausland.
+
+doctors:
+  - name: Dr. Elisabeth Ungerhofer
+    img: elisabeth.png
+    img_transparent: elisabeth-bg-transparent.png
+    job: Tierärtzin
+    desc: >
+      Diplom – u. Doktoratsstudium an der Veterinärmedizin. Universität Wien.
+      Tierärztin für Allgemeinmedizin bei allen Haustieren.
+      Regelmäßige Fortbildung im In – u. Ausland.
+
+  - name: Mag. Tamara Datler
+    img: tamara.png
+    img_transparent: tamara-bg-transparent.png
+    job: Tierärtzin
+    desc: >
+      Diplomstudium an der Veterinärmedizin. Universität Wien.
+      Tierärztin für Allgemeinmedizin bei allen Haustieren.
+      Regelmäßige Fortbildung im In – u. Ausland.
+
+  - name: Mag. Manuela Gross-Shrbeny
+    img: manuela.png
+    img_transparent: manuela-bg-transparent.png
+    job: Tierärtzin
+    desc: ""
+
+  - name: Mag. Simone Bruckner
+    img: simone-bg-transparent.png
+    img_transparent: simone-bg-transparent.png
+    job: Tierärztin
+    desc: ""
+
+  - name: Mag. Elean Mischling
+    img_transparent: placeholder.png
+    job: Tierärztin
+
+  - name: Mag. Julia Atterburry
+    img_transparent: placeholder.png
+    job: Tierärztin
+
+  - name: Mag. Daniel Brandt
+    img_transparent: placeholder.png
+    job: Tierärztin
+
+  - name: Mag. Lukas Strobl
+    img_transparent: placeholder.png
+    job: Tierärztin
+
+assistant:
+  - name: Alexander Punz
+    img: alex.png
+    img_transparent: alex-bg-transparent.png
+    job: Ordinationsassistenz
+    desc: >
+      Tierpflege
+      Rezeption
+      OP – Assistenz
+
+  - name: Elena Biedermann
+    img: elena.png
+    img_transparent: elena-bg-transparent.png
+    job: Ordinationsassistenz
+    desc: >
+      Tierpflege
+      Rezeption
+      OP – Assistenz
+
+  - name: Tanja Waldhäusl
+    img: tanja.png
+    img_transparent: tanja-bg-transparent.png
+    job: Ordinationsassistenz
+    desc: >
+      Tierpflege
+      Rezeption
+      OP – Assistenz
+
+  - name: Selina Haider
+    img: selina-bg-transparent.png
+    img_transparent: selina-bg-transparent.png
+    job: Ordinationsassistentz
+    desc: ""
+
+  - name: Joana  Müllner
+    img: joana.png
+    img_transparent: joana-bg-transparent.png
+    job: Ordinationsassistentz
+    desc: ""
+
+  - name: Nena Wagner
+    img: placeholder.png
+    img_transparent: placeholder.png
+    job: Ordinationsassistentz
+    desc: ""
+
+  - name: Stefan Reeh
+    img: placeholder.png
+    img_transparent: placeholder.png
+    job: Ordinationsassistentz
+    desc: ""
+
+team_it:
+  - name: Patrick Pacher
+    img: patrick.png
+    img_transparent: patrick-bg-transparent.png
+    job: IT Administration
+    desc: >
+      IT Administration
+      Software Entwicklung
+      Datenschutz
