@@ -34,6 +34,8 @@ jobs:
 
       - run: npm ci
       - run: hugo --minify
+        env:
+          HUGO_GOOGLE_API: ${{ secrets.HUGO_GOOGLE_API }}
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
