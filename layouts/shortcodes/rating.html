@@ -1,6 +1,6 @@
 {{ $placeDetails := partial "get-google-place-details.html"
     (dict
-      "key" "AIzaSyADliLs3SZfwV7wzRHzX85WQG5fboKCy-4"
+      "key" (( os.Getenv "HUGO_GOOGLE_API" ))
       "place_id" "ChIJ4bej1h7SckcRMJ6jUbFRFAw"
       "fields" "name,rating,reviews,user_ratings_total"
       "language" "de"
