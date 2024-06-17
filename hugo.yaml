@@ -32,7 +32,7 @@ menus:
       weight: 20
 
     - name: Jobs & Praktikum
-      url: /jobs/
+      url: /jobs-offers/
       parent: Tierklinik
 
     - name: Für Tierbesitzer
