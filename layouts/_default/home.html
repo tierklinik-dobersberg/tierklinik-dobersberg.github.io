@@ -1,5 +1,92 @@
 {{ define "main" }}
-  {{ .Content }}
+
+  <section class="relative w-full h-fit z-10 [&+section]:pt-16">
+    <div class="w-full h-full absolute" id="slide-container"></div>
+
+    <div class="w-full h-full absolute bg-black/25" id="slide-container-overlay"></div>
+
+    <div class="w-full flex flex-col justify-start items-center font-medium gap-4 md:gap-[calc(101vh-35vh-32rem+8rem)] pt-4 md:pt-[25vh] relative">
+        <h1 class="text-white text-2xl md:text-4xl lg:text-4xl xl:text-6xl text-center shadow-black [text-shadow:_0_1px_0_var(--tw-shadow-color)]">
+          <span class="inline-block after:block after:h-2 after:-z-10 after:bg-blue-400/50">
+            Weil wir immer für Sie da sind!
+          </span>
+        </h1>
+
+        <div class="flex flex-row flex-wrap gap-8 justify-evenly w-full -mb-8">
+
+        <!-- Termine -->
+        <div class="w-full sm:min-w-[350px] flex-shrink-0 animate__animated animate__fadeIn [--animate-duration:1s] animate__delay-1s [--animate-delay:250ms] h-72 sm:w-[25%] text-center flex flex-col justify-between items-center text-base shadow-xl p-6 rounded-sm bg-blue-500 bg-opacity-95 text-white gap-4 ring-2">
+            <h3 class="space-x-2 uppercase">
+                <span class="inline-block after:block after:h-2 after:-z-10 after:bg-teal-400/50 font-light">
+                  Termine
+                </span>
+            </h3>
+
+            <h1 class="text-2xl font-lexend">
+              <a href="tel:+4328432800">02843/2800</a>
+            </h1>
+
+            <span class="text-sm">Individuelle Termine nach telefonischer Vereinbarung.</span>
+            <span><u><b>Behandlung nur mit Termin möglich</b></u></span>
+        </div>
+
+        <!-- Öffnungszeiten -->
+        <div class="w-full sm:min-w-[350px] flex-shrink-0 animate__animated animate__fadeIn [--animate-duration:1s] animate__delay-1s [--animate-delay:750ms] h-72 sm:w-[25%] text-center flex flex-col justify-between items-center text-base shadow-xl p-6 rounded-sm bg-blue-500 bg-opacity-95 text-white gap-4 ring-2">
+            <h3 class="space-x-2 uppercase">
+                <span class="inline-block after:block after:h-2 after:-z-10 after:bg-teal-400/50 font-light">
+                  Öffungszeiten
+                </span>
+            </h3>
+
+              <div class="flex-1 flex flex-col justify-evenly gap-2 text-sm">
+                <div class="border-b border-dashed flex justify-between gap-4 pb-2">
+                    <span class="text-left">Montag, Mittwoch und Freitag</span>
+                    <div class="whitespace-no-wrap"><b>08:00 - 12:00</b><br><b>13:00 - 17:00</b></div>
+                </div>
+                <div class="border-b border-dashed flex justify-between gap-4 pb-2">
+                    <span class="text-left">Dienstag und Donnerstag</span>
+                    <div class="whitespace-no-wrap"><b>08:00 - 12:00</b><br><b>14:00 - 18:00</b></div>
+                </div>
+                <div class="border-b border-dashed flex justify-between gap-4 pb-2">
+                    <span class="text-left">Samstag</span>
+                    <div class="whitespace-no-wrap"><b>09:00 - 12:00</b></div>
+                </div>
+
+                <span>Notdienst rund um die Uhr!</span>
+            </div>
+        </div>
+
+        <!-- Notfall -->
+        <div class="w-full sm:min-w-[350px] flex-shrink-0 animate__animated animate__fadeIn [--animate-duration:1s] animate__delay-1s [--animate-delay:1250ms] h-72 sm:w-[25%] text-center flex flex-col justify-between items-center text-base shadow-xl p-6 rounded-sm bg-blue-500 bg-opacity-95 text-white gap-4 ring-2">
+            <h3 class="space-x-2 uppercase">
+                <span class="inline-block after:block after:h-2 after:-z-10 after:bg-teal-400/50 font-light">
+                  Notfälle
+                </span>
+            </h3>
+
+            <h1 class="text-2xl font-lexend">
+              <a href="tel:+4328432800">02843/2800</a>
+            </h1>
+                
+            <span><b>Notdienst auch an Sonn- und Feiertagen</b></span>
+            <span>Wir sind für Notfälle <strong>rund um die Uhr unter der oben angeführten Nummer</strong>
+                    erreichbar!</span>
+        </div>
+
+        </div>
+      </div>
+
+    </div>
+
+    {{- with index site.Data "slides" }}
+    {{- range $index, $value := . }}
+    <template class="hidden" data-slide="{{ (math.Add $index 1)  }}" data-slide-darken="{{ .darken | default true }}">
+      {{ partial "imgh.html" (dict "src" (printf "slide/%s" .img) "imgClass" "object-top object-cover animate__animated animate__fadeIn animate__faster w-full h-full absolute top-0 left-0" "withDiv" false) }}
+    </template>
+    {{- end }}
+    {{- end }}
+
+  </section>
 
   {{- range $idx, $p := (sort site.RegularPages "File.BaseFileName" "asc") }}
     {{- $remainer := mod $idx 2}}
@@ -16,6 +103,7 @@
     {{- end }}
 
   {{- end }}
+
 
   <section class="flex items-center justify-start w-full shadow-inner group py-4 md:py-8 lg:py-12 xl:py-16 ">
     <div class="max-w-screen-xl m-auto">
@@ -39,7 +127,9 @@
       {{ with index site.Data "team" }}
 
       <h2 class="py-4 text-2xl font-medium text-center md:text-left md:ml-12">
-        Tierärzte
+        <span class="inline-block after:block after:h-2 after:-z-10 after:bg-blue-400/50">
+          Tierärzte
+        </span>
       </h2>
 
       <div class="flex flex-row flex-wrap gap-4 md:gap-8 lg:gap-12 justify-center items-start py-8">
@@ -47,11 +137,11 @@
 
         <div class="flex flex-col flex-nowrap gap-2 items-center justify-center flex-initial flex-shrink-0 flex-grow-0 w-48">
           <figure
-              class="overflow-hidden flex-shrink-0 rounded-full shadow w-32 h-32 bg-blue-50  transform transition duration-300 ease-in-out hover:scale-110">
-              {{ $img := resources.Get (printf "imgs/team/%s" .img_transparent)}}
-              <img src="{{ $img.RelPermalink }}">
+              class="flex-shrink-0 w-32 h-32 drop-shadow-xl rounded-t-full  transform transition duration-300 ease-in-out scale-110 relative overflow-hidden  border-b border-blue-400 border-opacity-50">
+              <div class="absolute rounded-t-full -bottom-8 bg-blue-50 top-[40%] w-full shadow-inner drop-shadow-lg border border-blue-400 border-opacity-50"></div>
+              {{ partial "imgh.html" (dict "src" (printf "team/%s" .img_transparent) "imgClass" "object-cover object-top w-full h-full relative rounded-t-full" "withDiv" false) }}
           </figure>
-          <label class="text-center">{{ .name }}</label>
+          <label class="text-center text-sm">{{ .name }}</label>
         </div>
 
         {{ end }}
@@ -60,11 +150,11 @@
 
         <div class="flex flex-col flex-nowrap gap-2 items-center justify-center flex-initial flex-shrink-0 flex-grow-0 w-48">
           <figure
-              class="overflow-hidden flex-shrink-0 rounded-full shadow w-32 h-32 bg-blue-50  transform transition duration-300 ease-in-out hover:scale-110">
-              {{ $img := resources.Get (printf "imgs/team/%s" .img_transparent)}}
-              <img src="{{ $img.RelPermalink }}">
+              class="flex-shrink-0 w-32 h-32 drop-shadow-xl rounded-t-full  transform transition duration-300 ease-in-out scale-110 relative overflow-hidden  border-b border-blue-400 border-opacity-50">
+              <div class="absolute rounded-t-full -bottom-8 bg-blue-50 top-[40%] w-full shadow-inner drop-shadow-xl border border-blue-400 border-opacity-50"></div>
+              {{ partial "imgh.html" (dict "src" (printf "team/%s" .img_transparent) "imgClass" "object-cover object-top w-full h-full relative rounded-t-full" "withDiv" false) }}
           </figure>
-          <label class="text-center">{{ .name }}</label>
+          <label class="text-center text-sm">{{ .name }}</label>
         </div>
 
         {{ end }}
@@ -72,7 +162,9 @@
 
 
       <h2 class="py-4 text-2xl font-medium text-center md:text-left md:ml-12 mt-16">
-        Ordinationsassitenz
+        <span class="inline-block after:block after:h-2 after:-z-10 after:bg-teal-400/50">
+          Ordinationsassistenz
+        </span>
       </h2>
 
       <div class="flex flex-row flex-wrap gap-4 md:gap-8 lg:gap-12 justify-center items-start py-8">
@@ -80,19 +172,20 @@
 
         <div class="flex flex-col flex-nowrap gap-2 items-center justify-center flex-initial flex-shrink-0 flex-grow-0 w-48">
           <figure
-              class="overflow-hidden flex-shrink-0 rounded-full shadow w-32 h-32 bg-blue-50  transform transition duration-300 ease-in-out hover:scale-110">
-              {{ $img := resources.Get (printf "imgs/team/%s" .img_transparent)}}
-              <img src="{{ $img.RelPermalink }}">
+              class="flex-shrink-0 w-32 h-32 drop-shadow-xl rounded-t-full  transform transition duration-300 ease-in-out scale-110 relative overflow-hidden  border-b border-teal-400 border-opacity-50">
+              <div class="absolute rounded-t-full -bottom-8 bg-blue-50 top-[40%] w-full shadow-inner drop-shadow-xl border border-teal-400 border-opacity-50"></div>
+              {{ partial "imgh.html" (dict "src" (printf "team/%s" .img_transparent) "imgClass" "object-cover object-top w-full h-full relative rounded-t-full" "withDiv" false) }}
           </figure>
-          <label class="text-center">{{ .name }}</label>
+          <label class="text-center text-sm">{{ .name }}</label>
         </div>
 
         {{ end }}
       </div>
 
-
       <h2 class="py-4 text-2xl font-medium text-center md:text-left md:ml-12 mt-16">
-        IT Administration
+        <span class="inline-block after:block after:h-2 after:-z-10 after:bg-green-400/50">
+          IT Administration
+        </span>
       </h2>
 
       <div class="flex flex-row flex-wrap gap-12 justify-center items-start py-8">
@@ -100,11 +193,11 @@
 
         <div class="flex flex-col flex-nowrap gap-2 items-center justify-center flex-initial flex-shrink-0 flex-grow-0 w-48">
           <figure
-              class="overflow-hidden flex-shrink-0 rounded-full shadow w-32 h-32 bg-blue-50  transform transition duration-300 ease-in-out hover:scale-110">
-              {{ $img := resources.Get (printf "imgs/team/%s" .img_transparent)}}
-              <img src="{{ $img.RelPermalink }}">
+              class="flex-shrink-0 w-32 h-32 rounded-t-full drop-shadow-xl transform transition duration-300 ease-in-out scale-110 relative overflow-hidden  border-b border-green-400 border-opacity-50">
+              <div class="absolute rounded-t-full -bottom-8 bg-blue-50 top-[40%] drop-shadow-xl w-full shadow-inner border border-green-400 border-opacity-50"></div>
+              {{ partial "imgh.html" (dict "src" (printf "team/%s" .img_transparent) "imgClass" "object-cover object-top w-full h-full relative rounded-t-full" "withDiv" false) }}
           </figure>
-          <label class="text-center">{{ .name }}</label>
+          <label class="text-center text-sm">{{ .name }}</label>
         </div>
 
         {{ end }}
@@ -113,4 +206,15 @@
 
     </div>
   </section>
+
+  {{- with index site.Data "team" }}
+    {{- range (index . "management" )}}
+
+  <template data-id="user-images" class="hidden">
+    {{ partial "imgh.html" (dict "src" (printf "team/%s" ( .img_big | default .img_transparent )) "imgClass" "object-cover animate__animated animate__fadeIn animate__faster" "withDiv" false) }}
+  </template>
+
+    {{- end }}
+  {{- end }}
+
 {{ end }}

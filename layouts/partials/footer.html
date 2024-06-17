@@ -12,9 +12,17 @@
         </li>
 
         {{- with .Children }}
+
+
         {{- range . }}
+        
+        {{- $attrs := dict "href" .URL }}
+        {{- with index .Params "umamiEvent" }}
+        {{- $attrs = merge $attrs (dict "data-umami-event" .) }}
+        {{- end }}
         <li>
-            <a href="{{ .URL }}">{{ .Name }}</a>
+            <a {{- range $k, $v :=$attrs }} {{- with $v }} {{- printf " %s=%q" $k $v | safeHTMLAttr }} {{- end }} {{- end
+        -}}>{{ .Name }}</a>
         </li>
         {{- end}}
         {{- end }}

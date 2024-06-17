@@ -8,3 +8,5 @@
 {{ with resources.Get "main.ts" | js.Build $opts | fingerprint }}
   <script src="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous"></script>
 {{ end }}
+
+<script defer src="https://analytics.dobersberg.vet/script.js" data-website-id="4f072dbb-9326-4990-afed-c34fb2b6ea92"></script>

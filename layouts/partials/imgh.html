@@ -1,4 +1,4 @@
-{{- $respSizes := slice "320" "640" "960" "1280" "1600" "1920" -}}
+{{- $respSizes := slice "320" "500" "640" "960" "1280" "1600" "1920" -}}
 {{/*
 	These are breakpoints, in pixels.
 	Adjust these to fit your use cases.
@@ -23,50 +23,55 @@
 	fade in for the LQIP effect.
 	Feel free to adjust your CSS/SCSS as desired.
 */}}
-{{- $imgClass := .imgClass | default "w-full h-auto" -}}
+{{- $imgClass := .imgClass | default "w-full h-auto animate__animated animate__fadeIn [--animate-duration:50ms]" -}}
 {{- $dataSzes := "(min-width: 1024px) 100vw, 50vw" -}}
 {{- $withDiv := .withDiv | default true }}
+{{- $lqip := .lqip | default true }}
+{{- $imgClass = printf "%s %s" $imgClass ( .extraImgClass | default "" )}}
 
-{{/*
-	Now we'll create the 20-pixel-wide LQIP and turn it into
-	Base64-encoded data, which is better for performance and caching.
-*/}}
-{{- $LQIP_img := $src.Resize "20x jpg" -}}
-{{- $LQIP_b64 := $LQIP_img.Content | base64Encode -}}
-{{/*
-	$CFPstyle is for use in styling the div's background,
-	as you'll see shortly.
-*/}}
-{{- $CFPstyle := printf "%s%s%s" "background: url(data:image/jpeg;base64," $LQIP_b64 "); background-size: cover; background-repeat: no-repeat;" -}}
 {{/*
 	Then, we create a 1280-pixel-wide JPG of the image.
 	This will serve as the "fallback" image for that tiny percentage
 	of browsers that don't understand the HTML `picture` tag.
 */}}
-{{- $actualImg := $src.Resize "1280x jpg" -}}
-{{/*
-	Now we'll handle the LQIP background for the div that will contain
-	the image content; the conditional at the top controls whether we're
-	doing inline styling --- which is a no-no for a tight Content
-	Security Policy (CSP). Here, it checks whether we're using nonces
-	(and thus a tight CSP), as spec'd in the site config file.
-	If so, it creates a new class, named with an md5 hash for the value
-	of $src, that the div can use to provide the LQIP background.
-	Otherwise, it inserts inline styling.
-	**THEREFORE** . . .
-	If you don't have a problem with inline styling, feel free to use only
-	the second option and avoid the conditional altogether.
-*/}}
-{{- $imgBd5 := md5 $src -}}
-{{- if $withDiv }}
-{{- if .Site.Params.Nonces -}}
-	<style>
-		.imgB-{{ $imgBd5 }} { {{ $CFPstyle | safeCSS }} }
-	</style>
-	<div class="relative imgB-{{ $imgBd5 }} bg-center">
-{{- else -}}
-	<div class="relative bg-center" style="{{ $CFPstyle | safeCSS }}">
-{{- end -}}
+{{- $actualImg := $src.Resize "1024x jpg" -}}
+
+{{- if $lqip }}
+	{{/*
+		Now we'll create the 20-pixel-wide LQIP and turn it into
+		Base64-encoded data, which is better for performance and caching.
+	*/}}
+	{{- $LQIP_img := $src.Resize "20x jpg" -}}
+	{{- $LQIP_b64 := $LQIP_img.Content | base64Encode -}}
+	{{/*
+		$CFPstyle is for use in styling the div's background,
+		as you'll see shortly.
+	*/}}
+	{{- $CFPstyle := printf "%s%s%s" "background: url(data:image/jpeg;base64," $LQIP_b64 "); background-size: cover; background-repeat: no-repeat;" -}}
+	{{/*
+		Now we'll handle the LQIP background for the div that will contain
+		the image content; the conditional at the top controls whether we're
+		doing inline styling --- which is a no-no for a tight Content
+		Security Policy (CSP). Here, it checks whether we're using nonces
+		(and thus a tight CSP), as spec'd in the site config file.
+		If so, it creates a new class, named with an md5 hash for the value
+		of $src, that the div can use to provide the LQIP background.
+		Otherwise, it inserts inline styling.
+		**THEREFORE** . . .
+		If you don't have a problem with inline styling, feel free to use only
+		the second option and avoid the conditional altogether.
+	*/}}
+	{{- $imgBd5 := md5 $src -}}
+	{{- if $withDiv }}
+	{{- if .Site.Params.Nonces -}}
+		<style>
+			.imgB-{{ $imgBd5 }} { {{ $CFPstyle | safeCSS }} }
+		</style>
+		<div class="relative imgB-{{ $imgBd5 }} bg-center">
+	{{- else -}}
+		<div class="relative bg-center" style="{{ $CFPstyle | safeCSS }}">
+	{{- end -}}
+	{{- end }}
 {{- end }}
 {{/*
 	Now we'll build the `picture` which modern browsers use to decide

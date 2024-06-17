@@ -1,0 +1,11 @@
+{{- $attrs := dict "href" ( .Get "href" ) "class" "rounded-md px-4 py-2 text-sm shadow-lg inline-flex items-center justify-center gap-2 hover:shadow-xl no-underline font-medium font-lexend cursor-pointer bg-opacity-75 hover:bg-opacity-100 transition-all duration-150 ease-in-out" }}
+{{- with .Get "umamiEvent" }}
+{{ $attrs = merge $attrs (dict "data-umami-event" . )}}
+{{- end }}
+{{ $attrs = merge $attrs (dict "class" ( (printf "%s %s" (index $attrs "class") ( .Get "class" | default "bg-blue-400 text-white") ) ) )}}
+
+<a 
+    {{- range $k, $v :=$attrs }} {{- with $v }} {{- printf " %s=%q" $k $v | safeHTMLAttr }} {{- end }} {{- end
+        -}}>
+    {{ .Inner }}
+</a>

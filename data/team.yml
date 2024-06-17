@@ -18,8 +18,9 @@ management:
       Regelmäßige Teilnahme an Fortbildungsveranstaltungen im In – u. Ausland.
 
   - name: Dr. Claudia Fürst
-    img: claudia.png
-    img_transparent: claudia-bg-transparent.png
+    img: claudia-3.png
+    img_transparent: claudia-2.png #claudia-bg-transparent.png
+    img_big: claudia-3.png
     job: Tierärztin
     desc: >
       Diplom – und Doktoratsstudium an der Veterinärmedizin. Universität Wien.
@@ -58,20 +59,16 @@ doctors:
     job: Tierärztin
     desc: ""
 
-  - name: Mag. Elean Mischling
-    img_transparent: placeholder.png
-    job: Tierärztin
-
   - name: Mag. Julia Atterburry
-    img_transparent: placeholder.png
+    img_transparent: julia.png
     job: Tierärztin
 
   - name: Mag. Daniel Brandt
-    img_transparent: placeholder.png
-    job: Tierärztin
+    img_transparent: daniel-bg-transparent.png
+    job: Tierarzt
 
   - name: Mag. Lukas Strobl
-    img_transparent: placeholder.png
+    img_transparent: lukas.png
     job: Tierärztin
 
 assistant:
@@ -115,14 +112,14 @@ assistant:
     desc: ""
 
   - name: Nena Wagner
-    img: placeholder.png
-    img_transparent: placeholder.png
+    img: nena.png
+    img_transparent: nena.png
     job: Ordinationsassistentz
     desc: ""
 
   - name: Stefan Reeh
-    img: placeholder.png
-    img_transparent: placeholder.png
+    img: stefan.png
+    img_transparent: stefan.png
     job: Ordinationsassistentz
     desc: ""
 

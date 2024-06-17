@@ -3,8 +3,10 @@ title = "Verhaltenstherapie"
 subtitle = "Verhaltenstherapeutische Aufarbeitung"
 date = 2024-02-23T14:00:00+01:00
 draft = false
-image = '/simone-verhalten.jpg'
-icon = 'fa-microscope'
+image = '/simone-verhalten-2.png'
+icon = 'fa-cat'
+lqip = false
+no-shadow = true
 +++
 
 Verhaltensprobleme beim Hund und bei der Katze können viele Ursachen

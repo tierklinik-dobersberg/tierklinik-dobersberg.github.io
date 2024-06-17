@@ -4,7 +4,7 @@ title: "Tierklinik Dobersberg"
 logoUrl: "imgs/logo.webp"
 
 imaging:
-  resampleFilter: Lanczos
+  resampleFilter: Linear #Box #Lanczos
   hint: photo
 
 menus:
@@ -12,15 +12,25 @@ menus:
     - name: Tierklinik
       weight: 10
 
-    - name: Leistungen
-      url: /#unsere-leistungen
+#    - name: News & Aktuelles
+#      url: /news/
+#      parent: Tierklinik
+#      weight: 10
+    - name: Startseite
+      url: /#
       parent: Tierklinik
-    - name: News & Aktuelles
-      url: /news/
-      parent: Tierklinik
+      weight: 5
+
     - name: Unser Team
       url: /#unser-team
       parent: Tierklinik
+      weight: 10
+
+    - name: Kontakt & Anfahrt
+      url: /#contact
+      parent: Tierklinik
+      weight: 20
+
     - name: Jobs & Praktikum
       url: /jobs/
       parent: Tierklinik
@@ -31,16 +41,17 @@ menus:
     - name: Leistungen
       url: /#unsere-leistungen
       parent: Für Tierbesitzer
-    - name: Vor- & Nachsorge
-      url: /faq/
-      parent: Für Tierbesitzer
+      weight: 10
 
-    - name: Kontakt
-      url: /contact/
-      weight: 30
+    - name: Vor- & Nachsorge
+      url: https://outline.dobersberg.vet/s/tierbesitzer-nachsorge
+      parent: Für Tierbesitzer
+      weight: 20
+      params:
+        umamiEvent: "Vor- & Nachsorge"
 
   footer:
-    - url: /contact/#map
+    - url: /#contact
       name: Anfahrt
     - url: /datenschutz/
       name: Datenschutz
@@ -48,5 +59,5 @@ menus:
       name: Impressum
     - url: /agb/
       name: AGB
-    - url: /faq/
-      name: FAQ
+    - name: FAQ
+      url: https://outline.dobersberg.vet/s/tierbesitzer-nachsorge

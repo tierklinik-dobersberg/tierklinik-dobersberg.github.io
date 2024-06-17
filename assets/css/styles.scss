@@ -8,13 +8,9 @@ $fa-font-path: "./webfonts";
 @import "./fontawesome/fontawesome.scss";
 @import "./fontawesome/solid.scss";
 @import "./fontawesome/regular.scss";
+@import "@animate.css";
 
 #menu {
-  .dropdown {
-    position: relative;
-    display: inline-block;
-  }
-
   .dropdown-content {
     @apply mt-[5px] left-[1px] min-w-[160px] overflow-auto flex-col items-stretch justify-start;
   }
@@ -22,46 +18,21 @@ $fa-font-path: "./webfonts";
   .dropdown-content a {
     @apply block text-left cursor-pointer py-3 px-4 text-sm;
   }
+}
 
-  .dropdown-content li:hover {
-    color: #1080cf;
-    @apply bg-gray-100;
+.single-content {
+  h1 {
+    @apply after:block after:bg-blue-400 after:h-2 font-lexend font-extralight block w-fit;
   }
 
-  .nav-li .dropdown-content {
-    @apply transition ease-in-out duration-150 flex invisible opacity-0 transform scale-y-0 origin-top h-0;
-  }
-
-  .nav-li.show .dropdown-content {
-    @apply visible transition-all ease-in-out duration-200 opacity-100 h-fit transform scale-y-100 origin-top;
-  }
-
-  .nav-li {
-    @apply border-b border-transparent;
-  }
-
-  .nav-li.show {
-    @apply border-blue-400;
+  h2 {
+    @apply font-lexend font-extralight;
   }
 }
 
 html,
 body {
   scroll-behavior: smooth;
-}
-
-@media (max-width: 768px) {
-  #menu {
-    border-top: 1px solid #1080cf;
-    min-width: 200px;
-
-    nav {
-      @apply w-full;
-    }
-
-    &.active {
-      top: 2.5rem;
-      display: flex;
-    }
-  }
+  scroll-padding-top: 56px;
+  font-size: 16px;
 }

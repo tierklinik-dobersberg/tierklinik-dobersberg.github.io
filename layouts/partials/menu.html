@@ -2,23 +2,25 @@
 {{- $menuID := .menuID }}
 
 {{- with index site.Menus $menuID }}
-<label id="menu-toggle" class="block text-gray-500 pointer-cursor md:hidden">
+<label id="menu-toggle" class="block text-gray-500 pointer-cursor md:hidden group/toggle">
   <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <path class="inline-flex" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+    <path class="transform transition-all duration-150 ease-in-out scale-100 group-[.active]/toggle:scale-0 origin-center" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
       d="M4 6h16M4 12h16M4 18h16" />
-    <path class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+    <path class="transform transition-all duration-150 ease-in-out scale-0 group-[.active]/toggle:scale-100 origin-center" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
   </svg>
 </label>
 
-<div class="hidden absolute w-auto text-center bg-gray-100 shadow md:relative md:shadow-none md:bg-transparent md:flex"
+<div class="w-auto [&.active+div]:block [&.active+div]:md:hidden overflow-hidden md:overflow-visible flex absolute text-center shadow md:relative md:shadow-none md:flex md:top-[unset] invisible md:visible [&.active]:visible top-12 sm:top-14 right-0 md:h-auto group"
   id="menu">
-  <nav class="shadow md:shadow-none">
+  <nav class="w-[300px] md:w-[unset] h-screen md:h-[unset] bg-white transform transition-all duration-150 ease-in-out md:translate-x-0 translate-x-full group-[.active]:translate-x-0">
     <ul
-      class="gap-2 justify-between items-center pt-4 text-base text-left text-gray-700 md:flex sm:pt-0 md:pt-0 md:text-center">
+      class="gap-2 justify-between items-center pt-4 text-base text-left text-gray-700 md:flex sm:pt-0 md:pt-0 md:text-center bg-white md:bg-[unset]">
       {{- partial "inline/menu/walk.html" (dict "page" $page "menuEntries" .) }}
     </ul>
   </nav>
 </div>
+
+<div class="transition-all duration-150 animate-fade hidden absolute top-12 sm:top-14 right-0 left-0 h-screen -z-10 backdrop-blur bg-gray-300/50" id="backdrop"></div>
 {{- end }}
 
 {{- define "partials/inline/menu/walk.html" }}
@@ -27,7 +29,7 @@
 
 {{- range .menuEntries }}
 {{- $attrs := dict "href" .URL }}
-{{- $attrs = merge $attrs (dict "class" "nav-link px-3 py-2 cursor-pointer") }}
+{{- $attrs = merge $attrs (dict "class" "nav-link px-3 py-2 cursor-pointer md:font-light font-medium active:text-blue-400") }}
 {{- if $page.IsMenuCurrent .Menu . }}
 {{- $attrs = merge $attrs (dict "class" "active" "aria-current" "page") }}
 {{- else if $page.HasMenuCurrent .Menu .}}
@@ -40,33 +42,39 @@
 {{- end }}
 {{- end }}
 <li
-  class="relative py-1 w-full whitespace-nowrap {{ if .Children }} rounded-t {{else}} rounded {{end}} nav-li hover:bg-gray-50 group">
+  class="relative py-1 w-full whitespace-nowrap {{ if .Children }} rounded-t {{else}} rounded {{end}} nav-li hover:md:bg-gray-50 group/item outline-none [&.show]:md:border-blue-400 border-b border-transparent">
   <a {{- range $k, $v :=$attrs }} {{- with $v }} {{- printf " %s=%q" $k $v | safeHTMLAttr }} {{- end }} {{- end -}}>
     {{- if .Children }}
     <i
-      class="mr-1 text-gray-300 transition-transform duration-300 ease-in-out transform -rotate-90 fa fa-caret-down group-hover:text-gray-500 group-hover:rotate-0"></i>
+      class="!hidden md:!inline-block mr-1 text-gray-300 transition-transform duration-300 ease-in-out transform -rotate-90 fa fa-caret-down group-hover/item:text-gray-500 group-hover/item:rotate-0"></i>
     {{- end }}
     {{ $name }}
   </a>
   {{- with .Children }}
-  <ul class="hidden relative bg-gray-50 border-l dropdown-content md:absolute md:shadow md:border-t md:border-l-0">
+  <ul class="group-[.show]/item:visible group-[.show]/item:h-fit group-[.show]/item:opacity-100 group-[.show]/item:scale-y-100 transition-all ease-in-out duration-150 flex md:opacity-0 transform md:scale-y-0 origin-top md:h-0 visible md:invisible relative bg-white md:bg-gray-50 dropdown-content md:absolute md:shadow md:border-t md:border-l-0">
     {{- range . }}
     {{- $attrs := dict "href" .URL }}
     {{- $attrs = merge $attrs (dict "class" "nav-link ml-0 xl:ml-4 px-3 py-2") }}
-    {{- if $page.IsMenuCurrent .Menu . }}
+    {{- if $page.IsMenuCurrent "main" . }}
     {{- $attrs = merge $attrs (dict "class" "active" "aria-current" "page") }}
     {{- else if $page.HasMenuCurrent .Menu .}}
     {{- $attrs = merge $attrs (dict "class" "ancestor" "aria-current" "true") }}
     {{- end }}
+
+    {{- with index .Params "umamiEvent" }}
+    {{- $attrs = merge $attrs (dict "data-umami-event" .) }}
+    {{- end }}
+
     {{- $name := .Name }}
     {{- with .Identifier }}
     {{- with T . }}
     {{- $name = . }}
     {{- end }}
     {{- end }}
-    <li>
+    <li class="hover:text-blue-500 hover:bg-white">
       <a {{- range $k, $v :=$attrs }} {{- with $v }} {{- printf " %s=%q" $k $v | safeHTMLAttr }} {{- end }} {{- end
         -}}>{{ $name }}</a>
+
 
     </li>
     {{- end }}

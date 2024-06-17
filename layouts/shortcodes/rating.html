@@ -1,0 +1,26 @@
+{{ $placeDetails := partial "get-google-place-details.html"
+    (dict
+      "key" "AIzaSyADliLs3SZfwV7wzRHzX85WQG5fboKCy-4"
+      "place_id" "ChIJ4bej1h7SckcRMJ6jUbFRFAw"
+      "fields" "name,rating,reviews,user_ratings_total"
+      "language" "de"
+      "region" "at"
+    )
+  }}
+
+  {{ with $placeDetails }}
+    {{ $stars := strings.Repeat ( math.Floor .rating ) "★" }}
+    {{ $halfStars := strings.Repeat ( math.Sub (math.Ceil .rating) ( math.Floor .rating ) ) "⯪" }}
+    {{ $emptyStars := strings.Repeat ( math.Sub 5 ( math.Ceil .rating ) ) "☆" }}
+
+                <div class="py-4 text-3xl font-extralight md:self-end flex flex-col">
+                    <div class="flex flex-col w-fit">
+                        <div class="flex flex-row items-center">
+                            <span class="inline-flex size-16 relative z-10 flex-col items-center justify-center text-center rounded-full bg-blue-400 text-white font-medium ring-1 ring-offset-1 ring-yellow-400">{{ .rating }}</span>
+                            <span class="inline-flex pb-1 pt-0.5 relative -left-4 items-center justify-start pl-6 pr-4 rounded-r-full border bg-yellow-50 border-yellow-400/50 text-yellow-400">{{ $stars }}{{ $halfStars }}{{ $emptyStars }}</span>
+                        </div>
+                        <span class="text-xs font-medium inline-block w-full text-end text-gray-500 relative right-8 -top-2.5">{{ .user_ratings_total }} Bewertungen</span>
+                    </div>
+                </div>
+
+  {{ end }}
