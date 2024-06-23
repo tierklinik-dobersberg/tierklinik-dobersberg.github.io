@@ -1,0 +1,48 @@
+{{/* Credits: https://github.com/martignoni/hugo-notice/tree/main*/}}
+
+{{/* Available notice types: warning, info, note, tip */}}
+{{- $noticeType := .Get "type" | default "notice" -}}
+{{- $noticeTitle := .Get "title" | default (i18n $noticeType) }}
+
+{{- $defaultStyle := dict 
+    "notice" (dict 
+        "title" "#fff"
+        "title-background" "#6be"
+        "content" "#444"
+        "content-background" "#e7f2fa"
+    )
+    "info" (dict 
+        "title" "#fff"
+        "title-background" "var(--color-gray-300)"
+        "content" "#444"
+        "content-background" "#fec"
+    )
+    "tip" (dict
+        "title" "#fff"
+        "title-background" "#5a5"
+        "content" "#444"
+        "content-background" "#efe"
+    )
+    "warning" (dict 
+        "title" "#fff"
+        "title-background" "#c33"
+        "content" "#444"
+        "content-background" "#fee"
+    )
+}}
+
+{{- $style := .Get "style" | default (index $defaultStyle $noticeType ) }}
+
+{{- $raw := (markdownify .Inner | chomp) -}}
+
+<div class="mb-8 rounded-b" style="background: {{ index $style "content-background" | safeCSS }}; color: {{ index $style "content" | safeCSS }}">
+    <h3 style="background: {{ index $style "title-background" | safeCSS }}; color: {{ index $style "title" | safeCSS }}" class="m-0 px-5 py-1 text-sm rounded-t font-light font-lexend">
+        <span class="icon-notice baseline">
+            {{ printf "assets/imgs/notice/%s.svg" $noticeType | readFile | safeHTML }}
+        </span>
+        {{- $noticeTitle -}}
+    </h3>
+    <div class="px-5 py-2 font-inter text-sm">
+        {{ $raw }}
+    </div>
+</div>

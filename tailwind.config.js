@@ -35,6 +35,12 @@ module.exports = {
   variants: {},
   plugins: [
     require("@tailwindcss/aspect-ratio"),
-    require("@tailwindcss/typography")
+    require("@tailwindcss/typography"),
+    require('@tailwind-plugin/expose-colors')({
+      prefix: '--color',
+      extract: [
+        'gray',
+      ]
+    }),
   ]
 }

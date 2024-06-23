@@ -9,7 +9,9 @@ title = 'Jobs und Praktikum'
 Nachstehend findest du unsere aktuellen Stellenausschreibungen.
 Bei Interesse melde dich doch einfach per Telefon, E-Mail oder persönlich vor Ort.
 
-- [Tierärztin oder Tierarzt für Kleintiermedizin](/jobs/kleintier/)
+{{< notice title="Aktuelle Job-Angebote" >}}
+Foobar
+{{< /notice >}}
 
 ## Praktikum? - Hier bist du richtig
 
