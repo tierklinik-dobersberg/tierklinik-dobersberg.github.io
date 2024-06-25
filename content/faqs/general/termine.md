@@ -10,7 +10,7 @@ Patientenbesitzer werden daher gebeten vorab telefonisch einen Termin zu vereinb
 Für die Abholung von Medikamenten oder Futter ist kein Termin notwendig. Medikamenten und Futterabgabe sind jedoch nur während unserer Öffnungszeiten
 möglich.
 
-**Öffnungszeiten:**  
+**Öffnungszeiten:**
 
 - <u>Montag, Mittwoch und Freitag</u>  
   08:00 bis 12:00 und 13:00 bis 17:00
@@ -19,17 +19,19 @@ möglich.
 - <u>Samstag</u>  
   09:00 bis 12:00
 
-**Außerhalb der Öffnungszeiten:**  
+**Außerhalb der Öffnungszeiten:**
 
-Sollten Sie einen Termin außerhalb unserer Öffnungszeiten - *zum Beispiel an Sonn- oder Feiertagen* - benötigen, bitten wir Sie um eine frühe Terminvereinbarung. Unser Bereitschaftsdienst sowie unsere Ordinationsassitenz ist am Vormittag normalerweise in der Tierklinik.
+Sollten Sie einen Termin außerhalb unserer Öffnungszeiten - _zum Beispiel an Sonn- oder Feiertagen_ - benötigen, bitten wir Sie um eine frühe Terminvereinbarung. Unser Bereitschaftsdienst sowie unsere Ordinationsassitenz ist am Vormittag normalerweise in der Tierklinik.
 
-Am Nachmittag werden an Sonn- und Feiertagen nur noch Notfälle behandelt und mit einer zuzüglichen Notdienstbebühr verrechnet.
+Da Sonn- und Feiertagen Behandlungen durch unseren Notdienst durchgeführt werden, wird zuzüglichen Notdienstbebühr verrechnet.
 
-<span class="text-red-500 font-normal font-lexend mb-8 block">
+<span class="block mb-8 font-normal text-red-500 font-lexend">
 Für Notfälle ist unser Bereitschaftsdienst rund um die Uhr für Sie und Ihre Lieblinge da! <br />
-Eine telefonische Kontaktaufnahme ist unbedingt erforderlich!
+Eine telefonische Voranmeldung ist auch hier unbedingt erforderlich!
 </span>
 
-{{< button href="tel:+4328432800" class="bg-black text-white text-xs">}}
+{{< button href="tel:+4328432800" class="mb-4 text-xs text-white bg-black">}}
 Jetzt Termin vereinbaren
 {{< /button >}}
+
+Bitte beachten Sie dass Hausbesuche normalerweise nicht möglich sind!

@@ -22,10 +22,10 @@ menus:
     - name: Tierklinik
       weight: 10
 
-#    - name: News & Aktuelles
-#      url: /news/
-#      parent: Tierklinik
-#      weight: 10
+    #    - name: News & Aktuelles
+    #      url: /news/
+    #      parent: Tierklinik
+    #      weight: 10
     - name: Startseite
       url: /#
       parent: Tierklinik
@@ -69,7 +69,6 @@ menus:
       parent: Für Tierbesitzer
       weight: 30
 
-
   footer:
     - url: /#contact
       name: Anfahrt
@@ -80,4 +79,4 @@ menus:
     - url: /agb/
       name: AGB
     - name: FAQ
-      url: https://outline.dobersberg.vet/s/tierbesitzer-nachsorge
+      url: /faqs/
