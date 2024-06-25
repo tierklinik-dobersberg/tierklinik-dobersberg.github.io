@@ -1,0 +1,24 @@
+<section data-accordion class="[&:last-of-type]:border-b border-t border-gray-100 px-4 flex flex-col hover:bg-gray-50">
+    <h2 data-accordion-title class="flex flex-row items-center justify-between cursor-pointer py-4">
+        <span class="font-lexend font-light select-none">{{.Title}}</span>
+
+        <div data-accordion-icon class="relative size-6">
+            <svg data-accordion-closed xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                stroke-width="1" stroke="currentColor" class="size-6 scale-100 absolute">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M12 9v6m3-3H9m12 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+            </svg>
+
+            <svg data-accordion-open xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                stroke-width="1" stroke="currentColor" class="size-6 transform scale-0 absolute">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 12H9m12 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+            </svg>
+        </div>
+    </h2>
+
+    <div data-accordion-content class="hidden">
+        <div class="p-4 pb-8 prose prose-sm max-w-5xl font-inter [&>h2]:text-sm [&>h3]:text-sm [&>h1]:text-sm overflow-hidden max-h-full">
+            {{.Content}}
+        </div>
+    </div>
+</section>

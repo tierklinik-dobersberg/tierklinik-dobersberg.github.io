@@ -88,7 +88,8 @@
 
   </section>
 
-  {{- range $idx, $p := (sort site.RegularPages "File.BaseFileName" "asc") }}
+  {{- $sections := where site.RegularPages "Section" "section"}}
+  {{- range $idx, $p := (sort $sections "File.BaseFileName" "asc") }}
     {{- $remainer := mod $idx 2}}
     {{- $align := "left"}} 
     {{- $background := $p.Param "class" | default "bg-blue-100 bg-opacity-50"}} 
@@ -98,9 +99,7 @@
       {{ $background = $p.Param "class" | default "bg-white"}}
     {{ end  }}
 
-    {{- if eq $p.Type "section" }}
-      {{ partial "section.html" (dict "context" . "align" $align "class" $background) }}
-    {{- end }}
+    {{ partial "section.html" (dict "context" . "align" $align "class" $background) }}
 
   {{- end }}
 

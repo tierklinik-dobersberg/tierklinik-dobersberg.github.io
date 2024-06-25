@@ -1,0 +1,6 @@
+{{ $render := .Get "render" | default true }}
+{{ if $render }}
+{{ .Page.Store.Set "empty-text" (.Inner | .Page.RenderString) }}
+{{ else }}
+{{ .Page.Store.Set "empty-text" .Inner }}
+{{ end }}

@@ -1,5 +1,5 @@
 module.exports = {
-  content: [`./layouts/**/*.html`, `./content/**/*.{md,html}`],
+  content: [`./layouts/**/*.html`, `./content/**/*.{md,html}`, `./assets/**/*.{ts,js,css}`],
   theme: {
     extend: {
       // that is animation class

@@ -2,9 +2,12 @@
 <section class="overflow-hidden relative w-full shadow-inner group py-4 md:py-8 lg:py-12 xl:py-16 ">
   <div class="relative z-10 p-4 m-auto max-w-screen-xl md:p-8 prose font-inter single-content">
 
-    {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
-    {{ $dateHuman := .Date | time.Format ":date_long" }}
-    <time datetime="{{ $dateMachine }}">{{ $dateHuman }}</time>
+    {{ with .Date }}
+      {{ $dateMachine := .| time.Format "2006-01-02T15:04:05-07:00" }}
+      {{ $dateHuman := .| time.Format ":date_long" }}
+      <time datetime="{{ $dateMachine }}">{{ $dateHuman }}</time>
+    {{ end }}
+
     <h1>{{ .Title }}</h1>
 
     {{ .Content }}

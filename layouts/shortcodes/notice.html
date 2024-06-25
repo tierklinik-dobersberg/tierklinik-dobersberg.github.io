@@ -36,8 +36,8 @@
 {{- $raw := (markdownify .Inner | chomp) -}}
 
 <div class="mb-8 rounded-b" style="background: {{ index $style "content-background" | safeCSS }}; color: {{ index $style "content" | safeCSS }}">
-    <h3 style="background: {{ index $style "title-background" | safeCSS }}; color: {{ index $style "title" | safeCSS }}" class="m-0 px-5 py-1 text-sm rounded-t font-light font-lexend">
-        <span class="icon-notice baseline">
+    <h3 style="background: {{ index $style "title-background" | safeCSS }}; color: {{ index $style "title" | safeCSS }}" class="m-0 px-5 py-1 text-sm rounded-t font-light font-lexend flex flex-row items-center gap-2">
+        <span class="icon-notice baseline [&>svg]:size-4 fill-white">
             {{ printf "assets/imgs/notice/%s.svg" $noticeType | readFile | safeHTML }}
         </span>
         {{- $noticeTitle -}}

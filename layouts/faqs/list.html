@@ -1,0 +1,25 @@
+{{ define "main" }}
+<section class="overflow-hidden relative w-full shadow-inner group py-4 md:py-8 lg:py-12 xl:py-16 ">
+    <div class="relative z-10 p-4 m-auto max-w-screen-xl md:p-8 font-inter single-content prose">
+        <h1>{{ .Title }}</h1>
+        {{ .Content }}
+    </div>
+
+    <div class="relative z-10 p-4 m-auto max-w-screen-xl md:p-8 font-inter flex flex-col gap-12">
+        {{- range .Sections }}
+        <div>
+            <header class="mb-8">
+                <h2 class="font-light font-lexend text-2xl">{{ .Title }}</h2>
+                {{- with .Param "description" }}
+                    <span class="block mt-2 text-gray-600 text-base font-inter font-medium">{{ . }}</span>
+                {{- end }}
+            </header>
+
+            {{- range .Pages.ByWeight }}
+                {{- partial "accordion.html" . }}
+            {{- end }}
+        </div>
+        {{- end }}
+    </div>
+</section>
+{{ end }}

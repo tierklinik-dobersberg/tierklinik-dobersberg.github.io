@@ -3,6 +3,7 @@ languageCode: "de"
 title: "Tierklinik Dobersberg"
 logoUrl: "imgs/logo.webp"
 defaultContentLanguage: "de"
+enableEmoji: true
 languages:
   de:
     languageCode: de
@@ -10,6 +11,11 @@ languages:
 imaging:
   resampleFilter: Linear #Box #Lanczos
   hint: photo
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
 
 menus:
   main:
@@ -57,6 +63,12 @@ menus:
       weight: 20
       params:
         umamiEvent: "Vor- & Nachsorge"
+
+    - name: Häufige Fragen (FAQ)
+      url: /faqs/
+      parent: Für Tierbesitzer
+      weight: 30
+
 
   footer:
     - url: /#contact
