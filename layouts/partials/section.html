@@ -33,12 +33,15 @@
             class="w-full flex-row flex-nowrap flex justify-between items-center {{if $left }} flex-row-reverse {{ end }}">
             <div class="block flex-grow border-b-2 border-blue-400 border-dashed"></div>
 
-            {{ if ne $icon "" }}
             <div
                 class="flex justify-center items-center w-12 h-12 text-2xl text-blue-500 bg-white bg-opacity-75 rounded-full border-2 border-blue-400 border-dashed">
+            {{ if ne $icon "" }}
                 <i class="fa {{ $icon }}"></i>
-            </div>
+            {{ else }}
+                {{ $image := resources.Get "imgs/logo.webp" }}
+                <img class="relative top-0.5 p-1.5 h-full" src="{{ $image.RelPermalink }}" />
             {{- end }}
+            </div>
 
             <div class="flex-grow border-b-2 border-blue-400 border-dashed"></div>
         </div>
