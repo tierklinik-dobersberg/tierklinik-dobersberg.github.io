@@ -5,6 +5,8 @@ date = 2024-02-23T14:00:00+01:00
 draft = false
 image = '/fahrpraxis-2.png'
 icon = 'fa-car'
+weight = 7
+reveal = true
 +++
 
 Um auch Ihre Groß- und Nutztiere bestens versorgt zu wissen, betreiben wir neben der Kleintierklinik auch eine Fahrpraxis mit derzeit 3 aktiven Fahrzeugen.

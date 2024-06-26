@@ -7,6 +7,8 @@ image = '/labor-1.png'
 background = "/labor-bg.png"
 background-class = "object-cover object-left-bottom h-full"
 icon = 'fa-microscope'
+weight = 3
+reveal = true
 +++
 
 Sowohl beim Menschen, als auch beim Tier. Schon durch wenige Milliliter Blut

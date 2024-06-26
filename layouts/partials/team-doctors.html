@@ -1,0 +1,48 @@
+{{ $textAlign := .textAlign | default "text-center md:text-left"}}
+{{ $imgSize := .imgSize | default "w-32 h-32"}}
+{{ $containerSize := .containerSize | default "w-48"}}
+{{ $textSize := .textSize | default "text-sm" }}
+
+{{ with index site.Data "team" }}
+
+<h2 class="py-4 text-2xl font-medium {{ $textAlign }} md:ml-12">
+    <span class="inline-block after:block after:h-2 after:-z-10 after:bg-blue-400/50">
+        Tierärzte
+    </span>
+</h2>
+
+<div class="flex flex-row flex-wrap gap-4 justify-center items-start py-8 md:gap-8 lg:gap-12">
+    {{ range (index . "management")}}
+
+    <div
+        class="flex flex-col flex-nowrap flex-initial flex-grow-0 flex-shrink-0 gap-2 justify-center items-center {{ $containerSize }}">
+        <figure
+            class="overflow-hidden relative flex-shrink-0 {{ $imgSize }} rounded-t-full border-b border-blue-400 border-opacity-50 drop-shadow-xl transition duration-300 ease-in-out transform scale-110">
+            <div
+                class="absolute rounded-t-full -bottom-8 bg-blue-50 top-[40%] w-full shadow-inner drop-shadow-lg border border-blue-400 border-opacity-50">
+            </div>
+            {{ partial "imgh.html" (dict "src" (printf "team/%s" .img_transparent) "imgClass" "object-cover object-top w-full h-full relative rounded-t-full" "withDiv" false) }}
+        </figure>
+        <label class="{{ $textSize}} text-center">{{ .name }}</label>
+    </div>
+
+    {{ end }}
+
+    {{ range (index . "doctors")}}
+
+    <div
+        class="flex flex-col flex-nowrap flex-initial flex-grow-0 flex-shrink-0 gap-2 justify-center items-center {{ $containerSize }}">
+        <figure
+            class="overflow-hidden relative flex-shrink-0 {{ $imgSize }} rounded-t-full border-b border-blue-400 border-opacity-50 drop-shadow-xl transition duration-300 ease-in-out transform scale-110">
+            <div
+                class="absolute rounded-t-full -bottom-8 bg-blue-50 top-[40%] w-full shadow-inner drop-shadow-xl border border-blue-400 border-opacity-50">
+            </div>
+            {{ partial "imgh.html" (dict "src" (printf "team/%s" .img_transparent) "imgClass" "object-cover object-top w-full h-full relative rounded-t-full" "withDiv" false) }}
+        </figure>
+        <label class="{{ $textSize}} text-center">{{ .name }}</label>
+    </div>
+
+    {{ end }}
+</div>
+
+{{ end }}

@@ -5,6 +5,8 @@ date = 2024-02-23T14:00:00+01:00
 draft = false
 image = "/sonografie.png"
 icon = 'fa-wifi transform -rotate-90'
+weight = 5
+reveal = true
 +++
 
 Die Ultraschalldiagnostik wird heute von fast allen medizinischen

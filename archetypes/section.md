@@ -9,4 +9,5 @@ icon = ''
 align = 'left'
 background = ''
 background-class = ''
+reveal = true
 +++

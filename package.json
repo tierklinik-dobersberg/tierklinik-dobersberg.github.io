@@ -23,6 +23,7 @@
     "@tailwindcss/typography": "^0.5.10",
     "animate.css": "^4.1.1",
     "jquery": "^3.7.1",
+    "reveal.js": "^5.1.0",
     "tw-elements": "^1.1.0"
   }
 }

@@ -1,0 +1,10 @@
+{{ $opts := dict "targetPath" "js/main.js" }}
+{{ if hugo.IsProduction }}
+{{ $opts = merge $opts (dict "minify" "true") }}
+{{ else }}
+{{ $opts = merge $opts (dict "sourceMap" "external") }}
+{{ end }}
+
+{{ with resources.Get "reveal-main.ts" | js.Build $opts | fingerprint }}
+<script src="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous"></script>
+{{ end }}

@@ -5,6 +5,8 @@ date = 2024-02-23T14:00:00+01:00
 draft = false
 image = "/xray.png"
 icon = 'fa-paw'
+weight = 2
+reveal = true
 +++
 
 Die Röntgendiagnostik ist eines der wichtigsten Bildgebenden Verfahren und dient

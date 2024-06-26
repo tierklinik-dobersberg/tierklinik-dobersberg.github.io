@@ -17,6 +17,20 @@ markup:
     renderer:
       unsafe: true
 
+outputFormats:
+  reveal:
+    baseName: slideshow
+    isHTML: true
+    mediaType: text/html
+    protocol: https://
+
+module:
+  mounts:
+    - source: node_modules/reveal.js/dist
+      target: assets
+    - source: assets
+      target: assets
+
 menus:
   main:
     - name: Tierklinik

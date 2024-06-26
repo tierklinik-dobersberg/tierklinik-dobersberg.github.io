@@ -7,6 +7,8 @@ image = '/simone-verhalten-2.png'
 icon = 'fa-cat'
 lqip = false
 no-shadow = true
+weight = 6
+reveal = true
 +++
 
 Verhaltensprobleme beim Hund und bei der Katze können viele Ursachen

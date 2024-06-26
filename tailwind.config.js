@@ -1,17 +1,21 @@
 module.exports = {
-  content: [`./layouts/**/*.html`, `./content/**/*.{md,html}`, `./assets/**/*.{ts,js,css}`],
+  content: [
+    `./layouts/**/*.html`,
+    `./content/**/*.{md,html}`,
+    `./assets/**/*.{ts,js,css}`,
+  ],
   theme: {
     extend: {
       // that is animation class
       animation: {
-        fade: 'fadein 250ms ease-in-out',
+        fade: "fadein 250ms ease-in-out",
       },
 
       // that is actual animation
-      keyframes: theme => ({
+      keyframes: (theme) => ({
         fadein: {
-          '0%': { opacity: '0%' },
-          '100%': { opacity:'100%' },
+          "0%": { opacity: "0%" },
+          "100%": { opacity: "100%" },
         },
       }),
 
@@ -19,28 +23,26 @@ module.exports = {
         lexend: [
           '"Lexend"',
           {
-            fontOpticalSizing: 'auto'
-          }
+            fontOpticalSizing: "auto",
+          },
         ],
         inter: [
           '"Inter"',
           {
-            fontOpticalSizing: 'auto',
-            fontVariationSettings: '"slnt" 0'
-          }
+            fontOpticalSizing: "auto",
+            fontVariationSettings: '"slnt" 0',
+          },
         ],
-      }
-    }
+      },
+    },
   },
   variants: {},
   plugins: [
     require("@tailwindcss/aspect-ratio"),
     require("@tailwindcss/typography"),
-    require('@tailwind-plugin/expose-colors')({
-      prefix: '--color',
-      extract: [
-        'gray',
-      ]
+    require("@tailwind-plugin/expose-colors")({
+      prefix: "--color",
+      extract: ["gray", "blue"],
     }),
-  ]
-}
+  ],
+};

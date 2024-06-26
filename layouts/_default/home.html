@@ -1,9 +1,9 @@
 {{ define "main" }}
 
   <section class="relative w-full h-fit z-10 [&+section]:pt-16">
-    <div class="w-full h-full absolute" id="slide-container"></div>
+    <div class="absolute w-full h-full" id="slide-container"></div>
 
-    <div class="w-full h-full absolute bg-black/25" id="slide-container-overlay"></div>
+    <div class="absolute w-full h-full bg-black/25" id="slide-container-overlay"></div>
 
     <div class="w-full flex flex-col justify-start items-center font-medium gap-4 md:gap-[calc(101vh-35vh-32rem+8rem)] pt-4 md:pt-[25vh] relative">
         <h1 class="text-white text-2xl md:text-4xl lg:text-4xl xl:text-6xl text-center shadow-black [text-shadow:_0_1px_0_var(--tw-shadow-color)]">
@@ -12,12 +12,12 @@
           </span>
         </h1>
 
-        <div class="flex flex-row flex-wrap gap-8 justify-evenly w-full -mb-8">
+        <div class="flex flex-row flex-wrap gap-8 justify-evenly -mb-8 w-full">
 
         <!-- Termine -->
         <div class="w-full sm:min-w-[350px] flex-shrink-0 animate__animated animate__fadeIn [--animate-duration:1s] animate__delay-1s [--animate-delay:250ms] h-72 sm:w-[25%] text-center flex flex-col justify-between items-center text-base shadow-xl p-6 rounded-sm bg-blue-500 bg-opacity-95 text-white gap-4 ring-2">
             <h3 class="space-x-2 uppercase">
-                <span class="inline-block after:block after:h-2 after:-z-10 after:bg-teal-400/50 font-light">
+                <span class="inline-block font-light after:block after:h-2 after:-z-10 after:bg-teal-400/50">
                   Termine
                 </span>
             </h3>
@@ -33,21 +33,21 @@
         <!-- Öffnungszeiten -->
         <div class="w-full sm:min-w-[350px] flex-shrink-0 animate__animated animate__fadeIn [--animate-duration:1s] animate__delay-1s [--animate-delay:750ms] h-72 sm:w-[25%] text-center flex flex-col justify-between items-center text-base shadow-xl p-6 rounded-sm bg-blue-500 bg-opacity-95 text-white gap-4 ring-2">
             <h3 class="space-x-2 uppercase">
-                <span class="inline-block after:block after:h-2 after:-z-10 after:bg-teal-400/50 font-light">
+                <span class="inline-block font-light after:block after:h-2 after:-z-10 after:bg-teal-400/50">
                   Öffungszeiten
                 </span>
             </h3>
 
-              <div class="flex-1 flex flex-col justify-evenly gap-2 text-sm">
-                <div class="border-b border-dashed flex justify-between gap-4 pb-2">
+              <div class="flex flex-col flex-1 gap-2 justify-evenly text-sm">
+                <div class="flex gap-4 justify-between pb-2 border-b border-dashed">
                     <span class="text-left">Montag, Mittwoch und Freitag</span>
                     <div class="whitespace-no-wrap"><b>08:00 - 12:00</b><br><b>13:00 - 17:00</b></div>
                 </div>
-                <div class="border-b border-dashed flex justify-between gap-4 pb-2">
+                <div class="flex gap-4 justify-between pb-2 border-b border-dashed">
                     <span class="text-left">Dienstag und Donnerstag</span>
                     <div class="whitespace-no-wrap"><b>08:00 - 12:00</b><br><b>14:00 - 18:00</b></div>
                 </div>
-                <div class="border-b border-dashed flex justify-between gap-4 pb-2">
+                <div class="flex gap-4 justify-between pb-2 border-b border-dashed">
                     <span class="text-left">Samstag</span>
                     <div class="whitespace-no-wrap"><b>09:00 - 12:00</b></div>
                 </div>
@@ -59,7 +59,7 @@
         <!-- Notfall -->
         <div class="w-full sm:min-w-[350px] flex-shrink-0 animate__animated animate__fadeIn [--animate-duration:1s] animate__delay-1s [--animate-delay:1250ms] h-72 sm:w-[25%] text-center flex flex-col justify-between items-center text-base shadow-xl p-6 rounded-sm bg-blue-500 bg-opacity-95 text-white gap-4 ring-2">
             <h3 class="space-x-2 uppercase">
-                <span class="inline-block after:block after:h-2 after:-z-10 after:bg-teal-400/50 font-light">
+                <span class="inline-block font-light after:block after:h-2 after:-z-10 after:bg-teal-400/50">
                   Notfälle
                 </span>
             </h3>
@@ -104,15 +104,15 @@
   {{- end }}
 
 
-  <section class="flex items-center justify-start w-full shadow-inner group py-4 md:py-8 lg:py-12 xl:py-16 ">
-    <div class="max-w-screen-xl m-auto">
+  <section class="flex justify-start items-center py-4 w-full shadow-inner group md:py-8 lg:py-12 xl:py-16">
+    <div class="m-auto max-w-screen-xl">
 
       <h1 class="py-4 text-3xl font-extralight text-center md:text-left md:ml-12" id="unser-team">
         Unser Team
       </h1>
 
       <div
-          class="w-full flex-row flex-nowrap flex justify-between items-center">
+          class="flex flex-row flex-nowrap justify-between items-center w-full">
           <div class="block flex-grow border-b-2 border-blue-400 border-dashed"></div>
 
           <div
@@ -123,85 +123,9 @@
           <div class="flex-grow border-b-2 border-blue-400 border-dashed"></div>
       </div>
 
-      {{ with index site.Data "team" }}
-
-      <h2 class="py-4 text-2xl font-medium text-center md:text-left md:ml-12">
-        <span class="inline-block after:block after:h-2 after:-z-10 after:bg-blue-400/50">
-          Tierärzte
-        </span>
-      </h2>
-
-      <div class="flex flex-row flex-wrap gap-4 md:gap-8 lg:gap-12 justify-center items-start py-8">
-        {{ range (index . "management")}}
-
-        <div class="flex flex-col flex-nowrap gap-2 items-center justify-center flex-initial flex-shrink-0 flex-grow-0 w-48">
-          <figure
-              class="flex-shrink-0 w-32 h-32 drop-shadow-xl rounded-t-full  transform transition duration-300 ease-in-out scale-110 relative overflow-hidden  border-b border-blue-400 border-opacity-50">
-              <div class="absolute rounded-t-full -bottom-8 bg-blue-50 top-[40%] w-full shadow-inner drop-shadow-lg border border-blue-400 border-opacity-50"></div>
-              {{ partial "imgh.html" (dict "src" (printf "team/%s" .img_transparent) "imgClass" "object-cover object-top w-full h-full relative rounded-t-full" "withDiv" false) }}
-          </figure>
-          <label class="text-center text-sm">{{ .name }}</label>
-        </div>
-
-        {{ end }}
-
-        {{ range (index . "doctors")}}
-
-        <div class="flex flex-col flex-nowrap gap-2 items-center justify-center flex-initial flex-shrink-0 flex-grow-0 w-48">
-          <figure
-              class="flex-shrink-0 w-32 h-32 drop-shadow-xl rounded-t-full  transform transition duration-300 ease-in-out scale-110 relative overflow-hidden  border-b border-blue-400 border-opacity-50">
-              <div class="absolute rounded-t-full -bottom-8 bg-blue-50 top-[40%] w-full shadow-inner drop-shadow-xl border border-blue-400 border-opacity-50"></div>
-              {{ partial "imgh.html" (dict "src" (printf "team/%s" .img_transparent) "imgClass" "object-cover object-top w-full h-full relative rounded-t-full" "withDiv" false) }}
-          </figure>
-          <label class="text-center text-sm">{{ .name }}</label>
-        </div>
-
-        {{ end }}
-      </div>
-
-
-      <h2 class="py-4 text-2xl font-medium text-center md:text-left md:ml-12 mt-16">
-        <span class="inline-block after:block after:h-2 after:-z-10 after:bg-teal-400/50">
-          Ordinationsassistenz
-        </span>
-      </h2>
-
-      <div class="flex flex-row flex-wrap gap-4 md:gap-8 lg:gap-12 justify-center items-start py-8">
-        {{ range (index . "assistant")}}
-
-        <div class="flex flex-col flex-nowrap gap-2 items-center justify-center flex-initial flex-shrink-0 flex-grow-0 w-48">
-          <figure
-              class="flex-shrink-0 w-32 h-32 drop-shadow-xl rounded-t-full  transform transition duration-300 ease-in-out scale-110 relative overflow-hidden  border-b border-teal-400 border-opacity-50">
-              <div class="absolute rounded-t-full -bottom-8 bg-blue-50 top-[40%] w-full shadow-inner drop-shadow-xl border border-teal-400 border-opacity-50"></div>
-              {{ partial "imgh.html" (dict "src" (printf "team/%s" .img_transparent) "imgClass" "object-cover object-top w-full h-full relative rounded-t-full" "withDiv" false) }}
-          </figure>
-          <label class="text-center text-sm">{{ .name }}</label>
-        </div>
-
-        {{ end }}
-      </div>
-
-      <h2 class="py-4 text-2xl font-medium text-center md:text-left md:ml-12 mt-16">
-        <span class="inline-block after:block after:h-2 after:-z-10 after:bg-green-400/50">
-          IT Administration
-        </span>
-      </h2>
-
-      <div class="flex flex-row flex-wrap gap-12 justify-center items-start py-8">
-        {{ range (index . "team_it")}}
-
-        <div class="flex flex-col flex-nowrap gap-2 items-center justify-center flex-initial flex-shrink-0 flex-grow-0 w-48">
-          <figure
-              class="flex-shrink-0 w-32 h-32 rounded-t-full drop-shadow-xl transform transition duration-300 ease-in-out scale-110 relative overflow-hidden  border-b border-green-400 border-opacity-50">
-              <div class="absolute rounded-t-full -bottom-8 bg-blue-50 top-[40%] drop-shadow-xl w-full shadow-inner border border-green-400 border-opacity-50"></div>
-              {{ partial "imgh.html" (dict "src" (printf "team/%s" .img_transparent) "imgClass" "object-cover object-top w-full h-full relative rounded-t-full" "withDiv" false) }}
-          </figure>
-          <label class="text-center text-sm">{{ .name }}</label>
-        </div>
-
-        {{ end }}
-      </div>
-      {{ end }}
+      {{ partial "team-doctors.html" }}
+      {{ partial "team-assistenz.html" }}
+      {{ partial "team-it.html" }}
 
     </div>
   </section>

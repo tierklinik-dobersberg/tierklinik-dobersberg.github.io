@@ -1,0 +1,37 @@
+{{ define "main" }}
+<div class="!text-left slides">
+    {{ range $idx, $p := (where site.RegularPages.ByWeight "Params.reveal" "eq" true) }}
+    {{- $remainer := mod $idx 2}}
+    {{- $align := "left"}}
+    {{- $background := "rgb(219 234 254 / 50)" }}
+
+    {{ if eq $remainer 0 }}
+    {{ $align = "right"}}
+    {{ $background = "#ffffff" }}
+    {{ end }}
+
+    {{ partial "slide.html" (dict "context" . "align" $align "attrs" (dict "data-background-color" $background)) }}
+    {{ else }}
+    {{ .Content }}
+    {{ end }}
+
+    <section class="[&_h1]:!text-4xl [&_h2]:!text-3xl">
+        {{ partial "team-doctors.html" (dict "textAlign" "text-center" "imgSize" "w-48 h-48" "containerSize" "w-64" "textSize" "text-xl") }}
+    </section>
+
+    <section class="[&_h1]:!text-4xl [&_h2]:!text-3xl">
+        {{ partial "team-assistenz.html" (dict "textAlign" "text-center" "imgSize" "w-48 h-48" "containerSize" "w-64" "textSize" "text-xl") }}
+    </section>
+</div>
+
+  {{- with index site.Data "team" }}
+    {{- range (index . "management" )}}
+
+  <template data-id="user-images" class="hidden">
+    {{ partial "imgh.html" (dict "src" (printf "team/%s" ( .img_big | default .img_transparent )) "imgClass" "object-cover animate__animated animate__fadeIn animate__faster" "withDiv" false) }}
+  </template>
+
+    {{- end }}
+  {{- end }}
+  
+{{ end }}
