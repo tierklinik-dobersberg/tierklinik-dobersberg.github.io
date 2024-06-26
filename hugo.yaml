@@ -14,12 +14,17 @@ imaging:
 
 markup:
   goldmark:
+    parser:
+        wrapStandAloneImageWithinParagraph: false
+        attribute:
+          block: true
+          title: true
     renderer:
       unsafe: true
 
 outputFormats:
   reveal:
-    baseName: slideshow
+    baseName: index
     isHTML: true
     mediaType: text/html
     protocol: https://
@@ -27,7 +32,9 @@ outputFormats:
 module:
   mounts:
     - source: node_modules/reveal.js/dist
-      target: assets
+      target: assets/reveal
+    - source: node_modules/reveal.js/plugin
+      target: assets/reveal/plugin
     - source: assets
       target: assets
 

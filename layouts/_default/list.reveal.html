@@ -1,0 +1,20 @@
+{{ define "main" }}
+<div class="!text-left slides" data-reveal-autoplay="{{ .Store.Get "autoplay" }}">
+  {{ range .Pages }}
+
+  <section>
+    {{ if .IsSection }}
+      {{ range .Pages }}
+      <section>
+        {{ .Content }}
+      </section>
+      {{ end }}
+    {{ else }}
+    {{ .Content }}
+    {{ end }}
+  </section>
+  {{ end }}
+
+</div>
+  
+{{ end }}

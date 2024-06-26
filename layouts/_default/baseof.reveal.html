@@ -10,7 +10,7 @@
     <link rel="icon" type="image/x-icon" href="{{ $image.RelPermalink }}">
     {{ partialCached "head/css.html" . }}
 
-    {{ $revealStyle := resources.Get "reveal.css" }}
+    {{ $revealStyle := resources.Get "reveal/reveal.css" }}
     <link rel="stylesheet" href="{{ $revealStyle.RelPermalink }}" />
 
     {{ partialCached "head/js.reveal.html" . }}
