@@ -8,7 +8,7 @@ $(function () {
 
   let deck = new Reveal({
     plugins: [Markdown, RevealNotes],
-    autoSlide: autoplay ? 5000 : undefined,
+    autoSlide: autoplay ? 10000 : undefined,
     loop: true,
     width: "100%",
     height: "100%",
