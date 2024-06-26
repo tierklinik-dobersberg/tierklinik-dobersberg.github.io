@@ -1,16 +1,9 @@
 {{ define "main" }}
 <div class="!text-left slides">
     {{ range $idx, $p := (where site.RegularPages.ByWeight "Params.reveal" "eq" true) }}
-    {{- $remainer := mod $idx 2}}
-    {{- $align := "left"}}
-    {{- $background := "rgb(219 234 254 / 50)" }}
-
-    {{ if eq $remainer 0 }}
-    {{ $align = "right"}}
-    {{ $background = "#ffffff" }}
-    {{ end }}
-
-    {{ partial "slide.html" (dict "context" . "align" $align "attrs" (dict "data-background-color" $background)) }}
+    
+    {{ partial "slide.html" (dict "context" . "idx" $idx) }}
+    
     {{ else }}
     {{ .Content }}
     {{ end }}
@@ -33,5 +26,4 @@
 
     {{- end }}
   {{- end }}
-  
 {{ end }}

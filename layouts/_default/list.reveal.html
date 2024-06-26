@@ -1,20 +1,27 @@
 {{ define "main" }}
 <div class="!text-left slides" data-reveal-autoplay="{{ .Store.Get "autoplay" }}">
-  {{ range .Pages }}
+  {{ range $idx, $p := (where .Pages.ByWeight "Params.reveal" "ne" false ) }}
 
   <section>
-    {{ if .IsSection }}
-      {{ range .Pages }}
-      <section>
-        {{ .Content }}
-      </section>
+    {{ if $p.IsSection }}
+      {{ range $idx, $p := (where .Pages.ByWeight "Params.reveal" "ne" false) }}
+      {{ partial "slide.html" (dict "context" $p "idx" $idx ) }}
       {{ end }}
     {{ else }}
-    {{ .Content }}
+    {{ partial "slide.html" (dict "context" $p "idx" $idx ) }}
     {{ end }}
   </section>
   {{ end }}
 
 </div>
   
+  {{- with index site.Data "team" }}
+    {{- range (index . "management" )}}
+
+  <template data-id="user-images" class="hidden">
+    {{ partial "imgh.html" (dict "src" (printf "team/%s" ( .img_big | default .img_transparent )) "imgClass" "object-cover animate__animated animate__fadeIn animate__faster" "withDiv" false) }}
+  </template>
+
+    {{- end }}
+  {{- end }}
 {{ end }}

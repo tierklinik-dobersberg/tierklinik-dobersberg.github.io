@@ -1,4 +1,56 @@
-{{- $align := .align | default "left"}}
+{{- $remainer := mod .idx 2}}
+{{- $align := "left"}}
+{{- $background := "rgb(219 234 254 / 50)" }}
+
+{{ if eq $remainer 0 }}
+{{ $align = "right"}}
+{{ $background = "#ffffff" }}
+{{ end }}
+
+{{ $attrs := dict "data-background-color" $background }}
+
+{{ $p := .context }}
+
+{{ $backgroundImage := "" }}
+{{ with ($p.Param "background") }}
+    {{ $image := resources.Get (printf "imgs%s" . ) }}
+    {{ $attrs = merge $attrs (dict "data-background-image" $image.RelPermalink "data-background-opacity" "0.1")}}
+{{ end }}
+
+{{ with ($p.Param "background-class" )}}
+    {{ if strings.Contains . "object-cover"}}
+        {{ $attrs = merge $attrs (dict "data-background-size" "cover")}}
+    {{ else }}
+        {{ $attrs = merge $attrs (dict "data-background-size" "contain")}}
+    {{ end }}
+
+    {{ if strings.Contains . "object-left-bottom"}}
+        {{ $attrs = merge $attrs (dict "data-background-position" "left bottom")}}
+    {{ end }}
+
+    {{ if strings.Contains . "object-left-top"}}
+        {{ $attrs = merge $attrs (dict "data-background-position" "left top")}}
+    {{ end }}
+
+
+    {{ if strings.Contains . "object-right-bottom"}}
+        {{ $attrs = merge $attrs (dict "data-background-position" "right bottom")}}
+    {{ end }}
+
+    {{ if strings.Contains . "object-right-top"}}
+        {{ $attrs = merge $attrs (dict "data-background-position" "right top")}}
+    {{ end }}
+
+    {{ if strings.Contains . "object-top"}}
+        {{ $attrs = merge $attrs (dict "data-background-position" "top")}}
+    {{ end }}
+
+    {{ if strings.Contains . "object-bottom"}}
+        {{ $attrs = merge $attrs (dict "data-background-position" "bottom")}}
+    {{ end }}
+
+{{ end }}
+
 {{- $left := eq $align "left" }}
 {{- $subtitle := .context.Param "subtitle" | default "" }}
 {{- $image := .context.Param "image" | default "" }}
@@ -12,8 +64,6 @@
 {{- if .context.Param "no-shadow" }}
 {{- $shadow = ""}}
 {{- end }}
-
-{{- $attrs := .attrs | default (dict ) }}
 
 <section {{- range $k, $v :=$attrs }} {{- with $v }} {{- printf " %s=%q" $k $v | safeHTMLAttr }} {{- end }} {{- end }}
     class="relative w-full group">

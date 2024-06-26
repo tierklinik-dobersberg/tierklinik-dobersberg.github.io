@@ -2,5 +2,5 @@
 autoplay: false
 
 build:
-    render: never
+    render: never # change to always
 ---

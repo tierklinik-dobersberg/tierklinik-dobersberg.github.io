@@ -89,6 +89,7 @@
   </section>
 
   {{- $sections := where site.RegularPages "Section" "section"}}
+  {{- $sections = where $sections "Params.home" "ne" false }}
   {{- range $idx, $p := (sort $sections "File.BaseFileName" "asc") }}
     {{- $remainer := mod $idx 2}}
     {{- $align := "left"}} 
@@ -102,33 +103,6 @@
     {{ partial "section.html" (dict "context" . "align" $align "class" $background) }}
 
   {{- end }}
-
-
-  <section class="flex justify-start items-center py-4 w-full shadow-inner group md:py-8 lg:py-12 xl:py-16">
-    <div class="m-auto max-w-screen-xl">
-
-      <h1 class="py-4 text-3xl font-extralight text-center md:text-left md:ml-12" id="unser-team">
-        Unser Team
-      </h1>
-
-      <div
-          class="flex flex-row flex-nowrap justify-between items-center w-full">
-          <div class="block flex-grow border-b-2 border-blue-400 border-dashed"></div>
-
-          <div
-              class="flex justify-center items-center w-12 h-12 text-2xl text-blue-500 bg-white bg-opacity-75 rounded-full border-2 border-blue-400 border-dashed">
-              <i class="fa fa-hospital-user"></i>
-          </div>
-
-          <div class="flex-grow border-b-2 border-blue-400 border-dashed"></div>
-      </div>
-
-      {{ partial "team-doctors.html" }}
-      {{ partial "team-assistenz.html" }}
-      {{ partial "team-it.html" }}
-
-    </div>
-  </section>
 
   {{- with index site.Data "team" }}
     {{- range (index . "management" )}}
