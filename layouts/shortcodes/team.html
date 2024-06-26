@@ -1,2 +1,8 @@
-{{ $partial := printf "team-%s.html" (.Get 0)}}
-{{ partial $partial }}
+{{ $partial := printf "team-%s.html" (.Get 0 | default (.Get "type"))}}
+
+{{ $textAlign := .Get "textAlign" | default "text-center md:text-left"}}
+{{ $imgSize := .Get "imgSize" | default "w-32 h-32"}}
+{{ $containerSize := .Get "containerSize" | default "w-48"}}
+{{ $textSize := .Get "textSize" | default "text-sm" }}
+
+{{ partial $partial (dict "textAlign" $textAlign "imgSize" $imgSize "containerSize" $containerSize "textSize" $textSize )}}
