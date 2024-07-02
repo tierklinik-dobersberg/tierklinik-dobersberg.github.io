@@ -17,3 +17,4 @@ jobs:
           incremental_files_only: false
           inline: warning
           strict: true
+          suggestions: true
