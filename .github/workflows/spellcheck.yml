@@ -1,13 +1,16 @@
 name: Spellcheck Action
-on: push
+on:
+  push:
+    branches-ignore: main
 
 jobs:
   spellcheck:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
       - name: Install german dictionary
-        run: npm install @cspell/dict-de-de
+        run: npm install
 
       - uses: streetsidesoftware/cspell-action@v5
         with:
@@ -16,5 +19,5 @@ jobs:
           files: content/**/*.{md,html}
           incremental_files_only: false
           inline: warning
-          strict: true
+          strict: false
           suggestions: true

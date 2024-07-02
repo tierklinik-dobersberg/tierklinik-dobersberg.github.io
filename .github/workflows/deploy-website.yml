@@ -7,6 +7,9 @@ on:
   pull_request:
 
 jobs:
+  spellcheck:
+    uses: ./.github/workflows/spellcheck.yml
+
   deploy:
     runs-on: ubuntu-22.04
     env:
@@ -16,23 +19,23 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          fetch-depth: 0         # Fetch all history for .GitInfo and .Lastmod
+          fetch-depth: 0 # Fetch all history for .GitInfo and .Lastmod
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v3
         with:
-          hugo-version: '0.119.0'
+          hugo-version: "0.119.0"
           extended: true
 
       - uses: actions/setup-node@v4
         with:
-          node-version: '20'
-          cache: 'npm'
+          node-version: "20"
+          cache: "npm"
           # The action defaults to search for the dependency file (package-lock.json,
           # npm-shrinkwrap.json or yarn.lock) in the repository root, and uses its
           # hash as a part of the cache key.
           # https://github.com/actions/setup-node/blob/main/docs/advanced-usage.md#caching-packages-data
-          cache-dependency-path: '**/package-lock.json'
+          cache-dependency-path: "**/package-lock.json"
 
       - uses: actions/cache@v4
         with:
@@ -47,6 +50,16 @@ jobs:
           key: ${{ runner.os }}-hugogen-${{ hashFiles('assets/**/*') }}
           restore-keys: |
             ${{ runner.os }}-hugogen-
+
+      - uses: streetsidesoftware/cspell-action@v5
+        with:
+          config: cspell.json
+          check_dot_files: false
+          files: content/**/*.{md,html}
+          incremental_files_only: false
+          inline: warning
+          strict: true
+          suggestions: true
 
       - run: npm ci
       - run: hugo --minify
