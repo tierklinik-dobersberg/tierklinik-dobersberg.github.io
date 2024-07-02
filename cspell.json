@@ -6,7 +6,12 @@
       "@cspell/dict-html/cspell-ext.json"
   ],
   "language": "de-AT,de,en",
-  "ignoreWords": [
+  "dictionaries": {
+    "html",
+    "markdown",
+    "de-AT"
+  },
+  "words": [
     "Bankomat",
     "Waidhofen",
     "Thaya",
