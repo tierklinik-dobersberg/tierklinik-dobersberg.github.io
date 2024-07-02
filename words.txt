@@ -3,6 +3,7 @@ Bankomat
 berufsrechtliche
 Bezahloptionen
 Chiropraktik
+chiropraktik.png
 chiropraktischen
 Dobersberg
 DSGVO
@@ -18,6 +19,7 @@ Pacher
 Skelettsystem
 Sonn
 sonografie
+Stationsbetreuung
 Studienabgänger
 Szapary
 Szaparypark
