@@ -7,9 +7,6 @@ on:
   pull_request:
 
 jobs:
-  spellcheck:
-    uses: ./.github/workflows/spellcheck.yml
-
   deploy:
     runs-on: ubuntu-22.04
     env:
