@@ -12,6 +12,6 @@ no-shadow = true
 Verhaltensprobleme beim Hund und bei der Katze können viele Ursachen
 haben. Sind medizinische Gründe ausgeschlossen so kann eine
 Verhaltenstherapie weiterhelfen. Unsere Kollegin Mag. Simone Bruckner
-kann Ihnen als tierschutzqualifizierte Hundetrainerein in beiden Fällen
+kann Ihnen als tierschutzqualifizierte Hundetrainerin in beiden Fällen
 helfen. Die Klinik hat einen kleinen Trainingsplatz und auch Hausbesuche
 (vor allem bei Katzen) sind möglich.

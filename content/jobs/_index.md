@@ -17,7 +17,7 @@ Du willst bei uns dein Praktikum absolvieren? Melde dich per Telefon, E-Mail ode
 {{% /list-footer %}}
 
 {{< empty-text render=false >}}
-<div class="flex flex-col w-full items-center jusitfy-center font-lexend">
+<div class="flex flex-col w-full items-center justify-center font-lexend">
     <span>Derzeit gibt es keine aktiven Stellenausschreibungen - <span class="font-normal">wir freuen uns allerdings über Initiativbewerbungen</span></span>
 
     {{< button href="mailto:oridnation@tierklinikdobersberg.at" class="bg-black text-white mt-4">}}

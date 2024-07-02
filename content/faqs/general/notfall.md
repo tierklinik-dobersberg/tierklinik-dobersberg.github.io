@@ -5,7 +5,7 @@ weight = 1
 +++
 
 Für Notfälle - ein akut schmerzhafter oder lebensbedrohlicher Zustand - sind wir natürlich immer für Sie und ihre Lieblinge da!
-Da sich unser Bereitschaftsdienst nicht immer in der Tierklinik aufhält ist **eine telefonische Voranmeldung auch bei Notfällen unbedigt erforderlich**!
+Da sich unser Bereitschaftsdienst nicht immer in der Tierklinik aufhält ist **eine telefonische Voranmeldung auch bei Notfällen unbedingt erforderlich**!
 
 <span class="font-normal text-red-500">
 Bitte beachten Sie, dass Behandlungen im Notdienst mit einem zusätzlichen Notdienstzuschlag verrechnet werden. 

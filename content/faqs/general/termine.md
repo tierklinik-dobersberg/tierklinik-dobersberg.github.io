@@ -21,9 +21,9 @@ möglich.
 
 **Außerhalb der Öffnungszeiten:**
 
-Sollten Sie einen Termin außerhalb unserer Öffnungszeiten - _zum Beispiel an Sonn- oder Feiertagen_ - benötigen, bitten wir Sie um eine frühe Terminvereinbarung. Unser Bereitschaftsdienst sowie unsere Ordinationsassitenz ist am Vormittag normalerweise in der Tierklinik.
+Sollten Sie einen Termin außerhalb unserer Öffnungszeiten - _zum Beispiel an Sonn- oder Feiertagen_ - benötigen, bitten wir Sie um eine frühe Terminvereinbarung. Unser Bereitschaftsdienst sowie unsere Ordinationsassistenz ist am Vormittag normalerweise in der Tierklinik.
 
-Da Sonn- und Feiertagen Behandlungen durch unseren Notdienst durchgeführt werden, wird zuzüglichen Notdienstbebühr verrechnet.
+Da Sonn- und Feiertagen Behandlungen durch unseren Notdienst durchgeführt werden, wird zuzüglichen Notdienstgebühr verrechnet.
 
 <span class="block mb-8 font-normal text-red-500 font-lexend">
 Für Notfälle ist unser Bereitschaftsdienst rund um die Uhr für Sie und Ihre Lieblinge da! <br />
