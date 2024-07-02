@@ -5,5 +5,13 @@
       "@cspell/dict-markdown/cspell-ext.json",
       "@cspell/dict-html/cspell-ext.json"
   ],
-  "language": "de-AT,de,en"
+  "language": "de-AT,de,en",
+  "ignoreWords": [
+    "Bankomat",
+    "Waidhofen",
+    "Thaya",
+    "Dobesberg",
+    "DSGVO",
+    "miterhoben"
+   ]
 }
