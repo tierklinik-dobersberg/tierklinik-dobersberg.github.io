@@ -6,12 +6,9 @@
       "@cspell/dict-html/cspell-ext.json"
   ],
   "language": "de-AT,de,en",
-  "words": [
-    "Bankomat",
-    "Waidhofen",
-    "Thaya",
-    "Dobesberg",
-    "DSGVO",
-    "miterhoben"
+  "allowCompoundWords": true,
+  "dictionaries": ["custom"],
+  "dictionaryDefintions": [
+    { "name": "custom", "path": "./words.txt" }
    ]
 }
