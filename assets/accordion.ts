@@ -1,5 +1,7 @@
 import $ from "jquery";
 
+declare var umami: any;
+
 export class Accordion {
   static CONTENT_CLOSED = "opacity-0 scale-y-0 h-0";
   static CONTENT_OPENED = "opacity-100 scale-y-100 h-fit";
@@ -51,6 +53,13 @@ export class Accordion {
     this.content.addClass(Accordion.CONTENT_OPENED);
     this.icons.toggleClass("scale-100 scale-0");
     this.element.addClass("bg-gray-50");
+
+    try {
+      const umamiEvent = this.header.attr("data-accordion-title");
+      if (!!umamiEvent) {
+        umami.track("FAQ: " + umamiEvent)
+      }
+    } catch(err) {}
   }
 }
 

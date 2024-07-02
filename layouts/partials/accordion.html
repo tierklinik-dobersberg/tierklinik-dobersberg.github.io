@@ -1,16 +1,16 @@
 <section data-accordion class="[&:last-of-type]:border-b border-t border-gray-100 px-4 flex flex-col hover:bg-gray-50">
-    <h2 data-accordion-title class="flex flex-row items-center justify-between cursor-pointer py-4">
-        <span class="font-lexend font-light select-none">{{.Title}}</span>
+    <h2 data-accordion-title="{{ .Title }}" class="flex flex-row justify-between items-center py-4 cursor-pointer">
+        <span class="font-light select-none font-lexend">{{.Title}}</span>
 
         <div data-accordion-icon class="relative size-6">
             <svg data-accordion-closed xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                stroke-width="1" stroke="currentColor" class="size-6 scale-100 absolute">
+                stroke-width="1" stroke="currentColor" class="absolute scale-100 size-6">
                 <path stroke-linecap="round" stroke-linejoin="round"
                     d="M12 9v6m3-3H9m12 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
             </svg>
 
             <svg data-accordion-open xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                stroke-width="1" stroke="currentColor" class="size-6 transform scale-0 absolute">
+                stroke-width="1" stroke="currentColor" class="absolute transform scale-0 size-6">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M15 12H9m12 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
             </svg>
         </div>
