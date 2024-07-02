@@ -10,6 +10,6 @@ jobs:
         with:
           check_dot_files: false
           files: content/**/*.{md,html}
-          incremental_files_only: true
+          incremental_files_only: false
           inline: warning
           strict: false
