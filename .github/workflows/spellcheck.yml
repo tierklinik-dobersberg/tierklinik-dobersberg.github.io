@@ -7,7 +7,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Install german dictionary
-        run: npm install -g @cspell/dict-de-de
+        run: npm install @cspell/dict-de-de
 
       - uses: streetsidesoftware/cspell-action@v5
         with:
