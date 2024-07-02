@@ -17,7 +17,7 @@ Wenn die folgende Beschreibung auf dich zutrifft, melde dich doch per Telefon, E
 
 - Ein familiäres Arbeitsumfeld
 - Arbeiten in einem engagierten jungen Team
-- Ein faires, qualifikationsabhängiges Einstiegsgehalt
+- Ein faires, Qualifikation abhängiges Einstiegsgehalt
 - Abwechslungsreiche Tätigkeitsbereiche und Fälle
 - Kliniknahe Wohnmöglichkeit
 - Gründliche Einarbeitung für Studienabgänger (auch im Zuge eines Praktikums möglich)
@@ -29,6 +29,5 @@ Wenn die folgende Beschreibung auf dich zutrifft, melde dich doch per Telefon, E
 - Verlässlichkeit
 - Begeisterung für die Tierärztliche Tätigkeit
 - Interesse zur Weiterbildung und Lernbereitschaft
-
 
 # Wir freuen uns auf deine Bewerbung!

@@ -1,0 +1,14 @@
+{
+  "import": [
+      "@cspell/dict-de-de/cspell-ext.json",
+      "@cspell/dict-de-at/cspell-ext.json",
+      "@cspell/dict-markdown/cspell-ext.json",
+      "@cspell/dict-html/cspell-ext.json"
+  ],
+  "language": "de-AT,de,en",
+  "allowCompoundWords": true,
+  "dictionaries": ["custom"],
+  "dictionaryDefinitions": [
+    { "name": "custom", "path": "./words.txt" }
+   ]
+}
