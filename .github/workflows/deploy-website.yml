@@ -48,6 +48,8 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-hugogen-
 
+      - run: npm ci
+
       - uses: streetsidesoftware/cspell-action@v5
         with:
           config: cspell.json
@@ -58,7 +60,6 @@ jobs:
           strict: true
           suggestions: true
 
-      - run: npm ci
       - run: hugo --minify
         env:
           HUGO_GOOGLE_API: ${{ secrets.HUGO_GOOGLE_API }}
