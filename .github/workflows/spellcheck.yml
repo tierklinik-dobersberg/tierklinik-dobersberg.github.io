@@ -6,6 +6,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Install german dictionary
+        run: npm install -g @cspell/dict-de-de
+
       - uses: streetsidesoftware/cspell-action@v5
         with:
           check_dot_files: false
