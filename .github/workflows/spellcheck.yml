@@ -9,7 +9,7 @@ jobs:
       - uses: streetsidesoftware/cspell-action@v5
         with:
           check_dot_files: false
-          files: content/**/*.md
+          files: content/**/*.{md,html}
           incremental_files_only: true
           inline: warning
           strict: false
