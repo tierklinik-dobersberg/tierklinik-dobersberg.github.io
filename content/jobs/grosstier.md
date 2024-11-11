@@ -2,6 +2,7 @@
 publishDate = 2024-11-11T08:00:00+01:00
 draft = false
 title = 'Großtiermediziner'
+summary = 'Wir suchen Unterstützung für unser Großtier Tierärzte-Team'
 +++
 
 Wir suchen Unterstützung für unser Großtier Tierärzte-Team.

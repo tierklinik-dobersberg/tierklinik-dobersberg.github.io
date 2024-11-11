@@ -2,12 +2,10 @@
 publishDate = 2024-11-11T08:00:00+01:00
 draft = false
 title = 'Kleintiermediziner'
+summary = 'Wir suchen Unterstützung für unser Kleintier Tierärzte-Team'
 +++
 
-Wir suchen Unterstützung für unser Kleintier Tierärzte-Team.
-
-<!-- more -->
-Wir suchen Unterstützung für die folgenden Einsatzbereiche:
+Wir suchen Unterstützung für unser Kleintier Tierärzte-Team mit folgendem Einsatzbereich:
 
 - Ambulanz
 - OP (zumindest kleinere Standardeingriffe)
