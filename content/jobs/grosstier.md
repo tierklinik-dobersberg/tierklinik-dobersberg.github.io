@@ -1,15 +1,10 @@
 +++
 publishDate = 2024-06-16T14:00:00+01:00
 draft = false
-title = 'Kleintiermediziner'
+title = 'Gro0tiermediziner'
 +++
 
-Wir suchen Unterstützung für unser Kleintier Tierärzte-Team mit folgendem Einsatzbereich:
-
-- Ambulanz
-- OP (zumindest kleinere Standardeingriffe)
-- Nacht- bzw Notdienst
-- Stationsbetreuung
+Wir suchen Unterstützung für unser Großtier Tierärzte-Team.
 
 Wenn die folgende Beschreibung auf dich zutrifft, melde dich doch per Telefon, E-Mail oder persönlich vor Ort.
 
