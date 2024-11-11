@@ -1,10 +1,12 @@
 +++
 publishDate = 2024-06-16T14:00:00+01:00
 draft = false
-title = 'Gro0tiermediziner'
+title = 'Großtiermediziner'
 +++
 
 Wir suchen Unterstützung für unser Großtier Tierärzte-Team.
+
+<!-- more -->
 
 Wenn die folgende Beschreibung auf dich zutrifft, melde dich doch per Telefon, E-Mail oder persönlich vor Ort.
 
