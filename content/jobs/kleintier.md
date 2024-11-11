@@ -7,7 +7,7 @@ title = 'Kleintiermediziner'
 Wir suchen Unterstützung für unser Kleintier Tierärzte-Team.
 
 <!-- more -->
-Wir suchen Unterstüzung für die folgenden Einsatzbereiche:
+Wir suchen Unterstützung für die folgenden Einsatzbereiche:
 
 - Ambulanz
 - OP (zumindest kleinere Standardeingriffe)
