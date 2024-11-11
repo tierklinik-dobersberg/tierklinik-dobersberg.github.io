@@ -31,3 +31,4 @@ umami
 Verantworungsbereichs
 Waidhofen
 wifi
+Speicheln
