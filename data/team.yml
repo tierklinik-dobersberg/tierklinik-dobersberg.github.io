@@ -117,12 +117,6 @@ assistant:
     job: Ordinationsassistentz
     desc: ""
 
-  - name: Stefan Reeh
-    img: stefan.png
-    img_transparent: stefan.png
-    job: Ordinationsassistentz
-    desc: ""
-
 team_it:
   - name: Patrick Pacher
     img: patrick.png
