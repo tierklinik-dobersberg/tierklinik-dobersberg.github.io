@@ -5,7 +5,7 @@ title = 'Reinigungskraft'
 summary = 'Wir suchen eine Reinigungskraft auf geringfügiger Basis'
 +++
 
-# Wir suchen: Reinigungskraft (m/w/d) auf geringfügiger Basis
+## Wir suchen: Reinigungskraft (m/w/d) auf geringfügiger Basis
 
 Wir suchen für unsere Tierklinik in Dobersberg eine Reinigungskraft auf geringfügiger Basis (6 Stunden / Woche) mit flexiblen Arbeitszeiten:
 
