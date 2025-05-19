@@ -1,5 +1,5 @@
 +++
-publishDate = 2025-05-19T19:00:00+01:00
+publishDate = 2025-05-19T09:00:00+01:00
 draft = false
 title = 'Reinigungskraft'
 summary = 'Wir suchen eine Reinigungskraft auf geringfügiger Basis'
